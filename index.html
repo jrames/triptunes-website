@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Tunes — Road trip playlists, crafted by hand</title>
+  <meta name="description" content="Trip Tunes makes road-trip playlists the way they used to be — crafted by hand for your route, your taste, and the local music scene. Made to share. On the App Store." />
+  <link rel="icon" href="assets/app/app-icon.png" />
+  <meta property="og:title" content="Trip Tunes — Road trip playlists, crafted by hand" />
+  <meta property="og:description" content="Crafted-by-hand road trip playlists, tuned to your route and the local music scene. Made to share." />
+  <meta property="og:image" content="https://triptunes.xyz/assets/app/app-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== Trip Tunes brand font (bundled from the app) ===== */
+    @font-face {
+      font-family: "Delicious Handrawn";
+      src: url("assets/fonts/DeliciousHandrawn-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+    /* ===== Brand palette (from the app) ===== */
+    :root {
+      --coral: #FA8E85; --coral-deep: #E8604D; --rust: #C9462F;
+      --postit: #FCE85C; /* post-it yellow, echoing the app's sticky notes */
+      --postit-strip: #F4DA3D; /* slightly darker top band — the adhesive strip */
+      --cream: #F6F1E4; --paper: #FBF7EC; --tan: #E7D9BE;
+      --navy: #011E2D;  --gold: #F4C20D; --ink: #3A2A22; --muted: #8a7456;
+      --hand: "Delicious Handrawn", "Marker Felt", cursive;
+      --mono: "VT323", "Courier New", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; } /* nudge the whole type scale up from the 16px default */
+    body {
+      font-family: Georgia, "Times New Roman", serif; color: var(--ink); line-height: 1.6;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(250,142,133,.20), transparent 40%),
+        radial-gradient(circle at 82% 8%, rgba(244,194,13,.18), transparent 38%),
+        repeating-linear-gradient(0deg, transparent 0 33px, rgba(58,42,34,.045) 33px 34px),
+        var(--cream);
+    }
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+    .hand { font-family: var(--hand); }
+    .mono { font-family: var(--mono); letter-spacing: 1px; }
+
+    /* ===== App Store badge (CSS placeholder — swap for official badge) ===== */
+    .appstore { display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+      background: var(--navy); color: #fff; padding: 11px 20px; border-radius: 12px;
+      font-family: -apple-system, Helvetica, sans-serif; box-shadow: 3px 3px 0 rgba(0,0,0,.25); }
+    .appstore svg { width: 22px; height: 22px; fill: #fff; }
+    .appstore small { display: block; font-size: .62rem; line-height: 1; opacity: .85; }
+    .appstore strong { display: block; font-size: 1.05rem; line-height: 1.15; }
+
+    /* ===== Nav (sticky, with anchor links) ===== */
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(246,241,228,.88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(58,42,34,.12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1060px; margin: 0 auto; padding: 12px 24px; }
+    .logo { display: flex; align-items: center; gap: 12px; font-family: var(--hand); font-size: 1.9rem; color: var(--navy); text-decoration: none; }
+    .logo .app-icon-img { width: 40px; height: 40px; border-radius: 10px; box-shadow: 2px 2px 0 rgba(0,0,0,.18); }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-family: var(--mono); font-size: 1.15rem; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-links a.active { color: var(--rust); border-bottom-color: var(--coral); }
+    html { scroll-behavior: smooth; }
+    [id] { scroll-margin-top: 80px; } /* keep section headings clear of the sticky bar */
+    @media (max-width: 900px) { .nav-links { display: none; } }
+
+    /* ===== Hero ===== */
+    .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 36px; align-items: center; padding: 28px 0 56px; }
+    .eyebrow { font-family: var(--mono); font-size: 1.25rem; color: var(--rust); letter-spacing: 2px; text-transform: uppercase; }
+    .hero h1 { font-family: var(--hand); font-size: 5rem; line-height: .92; color: var(--navy); margin: 6px 0 0;
+      text-shadow: 3px 3px 0 var(--coral); }
+    .hero .lede { font-size: 1.25rem; max-width: min(34ch, 100%); margin: 22px 0 26px; }
+    .hero-cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .freebie { font-family: var(--hand); font-size: 1.3rem; color: var(--coral-deep); }
+
+    /* ===== Cassette hero art — real app assets, reproducing the loading-screen spin =====
+       cassette_cut.png is loading_cassette cropped tight + background knocked out to transparent
+       (984x687). Reel-hole centers were measured at (270,315) & (685,315); spools (loading_left_spool)
+       sit there and spin -360deg over 2s (the app's play mode). Tilted for a bit of life. */
+    .cassette-stage { position: relative; display: grid; place-items: center; }
+    .tape { position: relative; width: 100%; max-width: 460px; aspect-ratio: 984 / 687; transform: rotate(-5deg);
+      filter: drop-shadow(0 18px 22px rgba(1,30,45,.28)); }
+    .tape-body { width: 100%; height: 100%; display: block; }
+    /* aspect-ratio reserves the box before images load, so the % spool positions are correct from first paint */
+    .spool { position: absolute; width: 11.8%; aspect-ratio: 1 / 1; animation: tape-spin 2s linear infinite; will-change: transform; }
+    /* hole centers via connected-component flood-fill on the 2x asset (robust to linework) */
+    .spool-l { left: 30.18%; top: 45.56%; }
+    .spool-r { left: 69.97%; top: 45.85%; }
+    @keyframes tape-spin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(-360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) { .spool { animation: none; } }
+    .phone-peek { position: absolute; right: -6%; bottom: -10%; width: 142px; border-radius: 22px; box-shadow: 0 14px 30px rgba(1,30,45,.3); transform: rotate(6deg); border: 4px solid #111; }
+
+    /* ===== Press marquee ===== */
+    .press { background: var(--navy); color: var(--cream); border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); padding: 22px 24px; text-align: center; }
+    .press .top { font-family: var(--hand); font-size: 1.7rem; color: #fff; }
+    .press .top .star { color: var(--gold); }
+    .press .outlets { font-family: var(--mono); font-size: 1.25rem; letter-spacing: 2px; margin-top: 6px; color: var(--coral); }
+    .press > a { font-family: var(--mono); font-size: 1.05rem; color: var(--gold); letter-spacing: 1px; }
+
+    /* ===== Section scaffolding ===== */
+    section { padding: 70px 0; }
+    .how { padding-bottom: 112px; } /* extra breathing room before the color bands start */
+    .section-title { font-family: var(--hand); text-align: center; font-size: 3.2rem; color: var(--navy); text-shadow: 2px 2px 0 var(--coral); }
+    .section-sub { text-align: center; color: var(--muted); font-family: var(--mono); font-size: 1.3rem; letter-spacing: 1px; margin-bottom: 44px; }
+
+    /* ===== Steps as cassette label cards ===== */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 30px 24px; }
+    /* ----- post-it note styling (shared by steps + reviews) ----- */
+    .step, .review-card {
+      /* darker top ~10% = the adhesive strip, body below (matches the app) */
+      background: linear-gradient(180deg, var(--postit-strip) 0 14%, var(--postit) 16%);
+      border: none; border-radius: 2px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.10), 7px 11px 16px rgba(1,30,45,.16);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    /* shadow-only hover (no transform) so the per-note rotation is preserved */
+    .step:hover, .review-card:hover { box-shadow: 0 2px 3px rgba(0,0,0,.12), 12px 18px 28px rgba(1,30,45,.26); z-index: 3; }
+    .step { padding: 22px; }
+    .step .num { font-family: var(--mono); font-size: 2.4rem; color: var(--rust); line-height: 1; }
+    .step h3 { font-family: var(--hand); font-size: 1.7rem; color: var(--navy); margin: 2px 0 6px; }
+    .step p { font-size: 1rem; color: var(--ink); }
+    /* static "hand-placed" tilt — each note a slightly different angle */
+    .step:nth-child(4n+1) { transform: rotate(-2.4deg); }
+    .step:nth-child(4n+2) { transform: rotate(1.9deg); }
+    .step:nth-child(4n+3) { transform: rotate(-1.1deg); }
+    .step:nth-child(4n+4) { transform: rotate(2.6deg); }
+
+    /* ===== Feature bands — full-bleed stripe tinted to each screenshot's frame, so the shot blends in ===== */
+    .band { width: 100%; }
+    .band .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+    .band.flip .shot { order: 2; }
+    .band .shot { display: grid; place-items: center; }
+    /* no frame / no radius / no shadow — the rectangle dissolves into the band */
+    .band .shot img { width: 100%; max-width: 320px; display: block; }
+    .band h3 { font-family: var(--hand); font-size: 2.8rem; }
+    .band p { font-size: 1.12rem; margin-top: 8px; }
+    .band .tag { font-family: var(--mono); letter-spacing: 2px; font-size: 1.1rem; }
+
+    /* band tints (sampled from the screenshots) */
+    .band-coral { background: #FE6150; }
+    .band-blue  { background: #03A6E9; }
+    .band-pale  { background: #E5F2F8; }
+    /* per-band text contrast */
+    .band-coral .feature, .band-blue .feature { color: #fff; }
+    .band-coral h3, .band-blue h3 { color: #fff; text-shadow: 3px 3px 0 rgba(1,30,45,.28); }
+    .band-coral .tag, .band-blue .tag { color: var(--cream); }
+    .band-coral p, .band-blue p { color: rgba(255,255,255,.92); }
+    .band-pale .feature { color: var(--ink); }
+    .band-pale h3 { color: var(--navy); text-shadow: 2px 2px 0 var(--coral); }
+    .band-pale .tag { color: var(--rust); }
+
+    /* ===== Gift sticky note ===== */
+    .gift { background: var(--gold); border: 3px solid var(--ink); border-radius: 4px; padding: 40px; max-width: 740px; margin: 0 auto; transform: rotate(-1.2deg); box-shadow: 8px 10px 0 rgba(0,0,0,.18); }
+    .gift h3 { font-family: var(--hand); font-size: 2.4rem; color: var(--navy); }
+    .gift p { font-size: 1.08rem; margin-top: 10px; }
+    .disclaimer { max-width: 720px; margin: 40px auto 0; text-align: center; font-size: .92rem; color: var(--muted); }
+
+    /* ===== Final CTA ===== */
+    .final { text-align: center; background: var(--coral); border-top: 4px solid var(--navy); padding: 72px 24px; }
+    .final h2 { font-family: var(--hand); font-size: 3.6rem; color: var(--navy); }
+    .final p { font-family: var(--mono); font-size: 1.4rem; color: var(--navy); letter-spacing: 1px; margin: 8px 0 26px; }
+
+    footer { text-align: center; padding: 30px 24px; font-family: var(--mono); font-size: 1.1rem; letter-spacing: 1px; color: var(--muted); }
+    footer a { color: var(--rust); }
+
+    /* ===== Horizontal scrollers (news + reviews) ===== */
+    .hscroll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding: 6px 24px 16px; -webkit-overflow-scrolling: touch; }
+    .hscroll > * { scroll-snap-align: start; flex: 0 0 auto; }
+    .hscroll::-webkit-scrollbar { height: 8px; }
+    .hscroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,.18); border-radius: 4px; }
+    .news-row { max-width: 1060px; margin: 14px auto 0; }
+
+    /* news cards live on the navy press band */
+    .news-card { width: 236px; text-align: left; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); border-radius: 10px; padding: 16px; text-decoration: none; display: flex; flex-direction: column; gap: 8px; transition: transform .15s, background .15s; }
+    .news-card:hover { transform: translateY(-3px); background: rgba(255,255,255,.13); }
+    .news-card .outlet { font-family: var(--mono); font-size: 1.1rem; letter-spacing: 1px; color: var(--gold); }
+    .news-card .headline { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 600; font-size: 1rem; color: #fff; line-height: 1.3; }
+    .news-card .go { font-family: var(--mono); font-size: .95rem; color: var(--coral); margin-top: auto; }
+    .news-card.pick { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
+    .news-card .badge { font-family: var(--mono); font-size: .8rem; letter-spacing: 1px; color: var(--navy); background: var(--gold); align-self: flex-start; padding: 2px 8px; border-radius: 4px; }
+
+    /* ===== Reviews — mixtape liner-note cards ===== */
+    .reviews { padding: 72px 0; }
+    /* extra vertical padding so the rotated notes aren't clipped by the scroller */
+    .review-row { max-width: 1100px; margin: 0 auto; padding: 32px 24px 38px; }
+    .review-card { width: 320px; padding: 22px; display: flex; flex-direction: column; }
+    .review-card .stars { color: #D9831E; font-size: 1.2rem; letter-spacing: 3px; }
+    .review-card .quote { font-family: Georgia, serif; font-size: 1.02rem; line-height: 1.5; margin: 12px 0 16px; color: var(--ink); }
+    .review-card .author { font-family: var(--hand); font-size: 1.5rem; color: var(--navy); margin-top: auto; }
+    .review-card .author::before { content: "— "; }
+    /* static "hand-placed" tilt per note */
+    .review-card:nth-child(5n+1) { transform: rotate(-2deg); }
+    .review-card:nth-child(5n+2) { transform: rotate(1.6deg); }
+    .review-card:nth-child(5n+3) { transform: rotate(-3deg); }
+    .review-card:nth-child(5n+4) { transform: rotate(2.3deg); }
+    .review-card:nth-child(5n+5) { transform: rotate(-1deg); }
+
+    @media (max-width: 820px) {
+      .hero, .band .feature { grid-template-columns: 1fr; text-align: center; }
+      .hero > div, .band .feature > * { min-width: 0; } /* let grid items shrink instead of overflowing */
+      .band.flip .shot { order: 0; }
+      .hero h1 { font-size: min(3.6rem, 13vw); } /* scale headline down on narrow phones so "playlists," fits */
+      .hero .lede { margin-left: auto; margin-right: auto; }
+      .hero-cta { justify-content: center; } .phone-peek { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="#hero"><img class="app-icon-img" src="assets/app/app-icon.png" alt="Trip Tunes" /> Trip Tunes</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#how-it-works">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#press">Press</a>
+        </div>
+        <a class="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="wrap hero">
+    <div>
+      <p class="eyebrow">★ Side A · Est. 2024 ★</p>
+      <h1>Road trip<br/>playlists,<br/>by hand.</h1>
+      <p class="lede">The mixtape, reborn — crafted for your route, your taste, and the local music scene. And made to share.</p>
+      <div class="hero-cta">
+        <a class="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+        <span class="freebie">+ free blank tapes to start!</span>
+      </div>
+    </div>
+    <div class="cassette-stage">
+      <!-- Real app cassette + spinning spools (assets from TripTunes, loading-screen animation) -->
+      <div class="tape" role="img" aria-label="Trip Tunes cassette with spinning reels">
+        <img class="tape-body" src="assets/app/cassette_cut.png" alt="" />
+        <img class="spool spool-l" src="assets/app/loading_left_spool.png" alt="" />
+        <img class="spool spool-r" src="assets/app/loading_left_spool.png" alt="" />
+      </div>
+      <img class="phone-peek" src="assets/screenshots/tape-library.png" alt="Trip Tunes tape library" />
+    </div>
+  </header>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="wrap how">
+    <h2 class="section-title">How it works</h2>
+    <p class="section-sub">// LET THE TIRELESS ROBOTS DO THE WORK //</p>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Tell us your trip</h3><p>A few quick details about your route and your music taste.</p></div>
+      <div class="step"><div class="num">02</div><h3>Let it dig</h3><p>Trip Tunes explores the local scene and matches your trip's vibe.</p></div>
+      <div class="step"><div class="num">03</div><h3>Preview &amp; edit</h3><p>Tweak the tracklist, then save it locally or in Apple Music.</p></div>
+      <div class="step"><div class="num">04</div><h3>Share it</h3><p>Send mixtapes to friends — no blank tape required.</p></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <!-- Each band is tinted to match the screenshot's frame so the shot blends in -->
+  <section id="features" class="band band-coral">
+    <div class="feature">
+      <div class="shot"><img src="assets/screenshots/pick-trip.png" alt="Pick your trip and vibe" /></div>
+      <div><p class="tag">TRACK 01</p><h3>Pick your trip &amp; vibe</h3><p>From, to, genres, and the mood of the drive. A few taps sets the tone.</p></div>
+    </div>
+  </section>
+  <section class="band band-pale flip">
+    <div class="feature">
+      <div class="shot"><img src="assets/screenshots/create-mixtape.png" alt="Watch the mixtape come together" /></div>
+      <div><p class="tag">TRACK 02</p><h3>Watch it spin up</h3><p>The reels turn while Trip Tunes writes your tracklist, one song at a time.</p></div>
+    </div>
+  </section>
+  <section class="band band-blue">
+    <div class="feature">
+      <div class="shot"><img src="assets/screenshots/edit-mixtape.png" alt="Edit your mixtape" /></div>
+      <div><p class="tag">TRACK 03</p><h3>Make it yours</h3><p>Preview every track and trim anything that doesn't fit before you save.</p></div>
+    </div>
+  </section>
+  <section class="band band-coral flip">
+    <div class="feature">
+      <div class="shot"><img src="assets/screenshots/save-apple-music.png" alt="Save to Apple Music" /></div>
+      <div><p class="tag">TRACK 04</p><h3>Save to Apple Music</h3><p>Keep the tracklist in Trip Tunes, or open it into Apple Music in one tap.</p></div>
+    </div>
+  </section>
+  <section class="band band-pale">
+    <div class="feature">
+      <div class="shot"><img src="assets/screenshots/share-mixtape.png" alt="Share your mixtape" /></div>
+      <div><p class="tag">TRACK 05</p><h3>Share your mixtape</h3><p>Send a mix with its own cover art. Friends open and enjoy it instantly.</p></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS — real App Store reviews -->
+  <section id="reviews" class="reviews">
+    <div class="wrap">
+      <h2 class="section-title">From the App Store</h2>
+      <p class="section-sub">// ★★★★★ FROM REAL ROAD TRIPPERS //</p>
+    </div>
+    <div class="hscroll review-row">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">There's nothing like an old-school roadtrip, and what's the second most important part? Your tunes, of course! (The car is the most important part, for those wondering) Trip Tunes does a phenomenal job of finding the right tunes with just a few taps - so great! And that icon is so great!</p>
+        <p class="author">walkernyranger</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Saved me a lot of time by pulling together the perfect playlist for my road trip! I think I might use it for an upcoming party I have planned, too.</p>
+        <p class="author">Pink Ladybug 007</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">I love this app! It really helps kill road trip boredom. I love how it introduces me to artists and songs I don't know. Now I can easily get a playlist for any trip, any mood, any genre!</p>
+        <p class="author">BeanyBear23</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">This app really takes me back to the days of mixtapes with its lovely retro feel. It produces some really cool sound tracks, and integrates with Apple Music.</p>
+        <p class="author">OriensFlight</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Well designed little app! Big step up from letting Apple play you random junk. It's kinda fun just seeing what it picks out for you. I like that it's customized to the start and end points of your drive. Worth a look!</p>
+        <p class="author">OnlineWarrior23</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS + scrolling news strip -->
+  <div class="press" id="press">
+    <div class="top"><span class="star">★</span> Featured in Apple's “Listen Now” <span class="star">★</span></div>
+    <div class="hscroll news-row">
+      <!-- Distinctive blog / feature coverage -->
+      <a class="news-card" href="https://www.idownloadblog.com/2024/06/01/apps-of-the-week-part-94/" target="_blank" rel="noopener">
+        <span class="outlet">iDownloadBlog</span><span class="headline">Apps of the Week</span><span class="go">Read →</span></a>
+      <a class="news-card pick" href="https://www.texomashomepage.com/what-the-tech/remember-mix-tapes-theyre-backsort-of/" target="_blank" rel="noopener">
+        <span class="badge">★ App of the Year</span><span class="outlet">Texoma's Homepage</span><span class="headline">Remember mixtapes? They're back… sort of!</span><span class="go">Read →</span></a>
+      <!-- "What the Tech: App of the Day" — the same segment syndicated across affiliates -->
+      <a class="news-card" href="https://www.wrdw.com/2024/08/05/what-tech-app-day-trip-tunes/" target="_blank" rel="noopener">
+        <span class="outlet">WRDW</span><span class="headline">What the Tech: App of the Day</span><span class="go">Watch →</span></a>
+      <a class="news-card" href="https://www.kob.com/news/technology/trip-tunes-what-the-tech-app-of-the-day/" target="_blank" rel="noopener">
+        <span class="outlet">KOB4</span><span class="headline">What the Tech: App of the Day</span><span class="go">Watch →</span></a>
+      <a class="news-card" href="https://www.wfmz.com/video/what-the-tech-app-of-the-day-trip-tunes/video_eaafa2c0-3438-5bb9-9bb2-9e675ad5b639.html" target="_blank" rel="noopener">
+        <span class="outlet">WFMZ 69 News</span><span class="headline">What the Tech: App of the Day</span><span class="go">Watch →</span></a>
+      <a class="news-card" href="https://youtu.be/Mi0reMkB-gw" target="_blank" rel="noopener">
+        <span class="outlet">KTBS 3</span><span class="headline">What the Tech: App of the Day</span><span class="go">Watch →</span></a>
+      <a class="news-card" href="https://www.waka.com/2024/08/09/what-the-tech-app-of-the-day-trip-tunes/" target="_blank" rel="noopener">
+        <span class="outlet">WAKA 8</span><span class="headline">What the Tech: App of the Day</span><span class="go">Watch →</span></a>
+      <a class="news-card" href="https://www.wilx.com/2024/12/27/what-tech-app-day-trip-tunes/" target="_blank" rel="noopener">
+        <span class="outlet">WILX 10</span><span class="headline">What the Tech: App of the Day</span><span class="go">Watch →</span></a>
+      <a class="news-card" href="https://www.2news.com/video/what-the-tech-trip-tunes/video_344cc58d-3ec2-5567-a3fe-76349718b504.html" target="_blank" rel="noopener">
+        <span class="outlet">KTVN 2 News</span><span class="headline">What the Tech: Trip Tunes</span><span class="go">Watch →</span></a>
+    </div>
+    <a href="press-kit/">&gt;&gt; SEE THE FULL PRESS KIT</a>
+  </div>
+
+  <!-- GIFT -->
+  <section class="wrap">
+    <div class="gift">
+      <h3>Score free gift tapes 🎁</h3>
+      <p>You start with a few blank tapes — each good for one playlist. When they run out, grab more with a quick in-app purchase. And every so often, Trip Tunes drops surprise gift mixes you can open and enjoy right away.</p>
+    </div>
+    <p class="disclaimer">For the full experience you'll need an Apple Music subscription. Without one, you can preview tracks but can't play full songs or save playlists to your library. Trip Tunes isn't affiliated with Apple.</p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <h2>Your next road trip needs a soundtrack.</h2>
+    <p>// CRAFTED BY HAND · MADE TO SHARE //</p>
+    <a class="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+  </section>
+
+  <footer>
+    <!-- TODO: APP_STORE_URL + optional socials -->
+    <a href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener">APP STORE</a> · <a href="press-kit/">PRESS KIT</a><br/><br/>
+    © 2026 TRIP TUNES · NOT AFFILIATED WITH APPLE · APPLE MUSIC IS A TRADEMARK OF APPLE INC.
+  </footer>
+
+  <!-- Scroll-spy: highlight the last section whose top has scrolled under the nav -->
+  <script>
+    (function () {
+      const links = Array.from(document.querySelectorAll('.nav-links a'));
+      const targets = links
+        .map(a => ({ a, el: document.getElementById(a.getAttribute('href').slice(1)) }))
+        .filter(t => t.el);
+      if (!targets.length) return;
+      const LINE = 100; // detection line, just below the sticky nav
+      let ticking = false;
+      function spy() {
+        ticking = false;
+        const y = window.scrollY + LINE;
+        let current = null;
+        for (const t of targets) {
+          if (t.el.getBoundingClientRect().top + window.scrollY <= y) current = t;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        if (current) current.a.classList.add('active');
+      }
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      spy();
+    })();
+  </script>
+</body>
+</html>

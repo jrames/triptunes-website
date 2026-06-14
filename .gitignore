@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs / environment / secrets
+*.log
+.env
+.env.*
+*.pem
+*.key
+
+# Dependencies (if ever added)
+node_modules/
+
+# Earlier design demos + old stub — kept locally, not deployed
+_archive/

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Tunes — Press Kit</title>
+  <meta name="description" content="Press kit for Trip Tunes, the road-trip playlist app — fact sheet, description, screenshots, press coverage, and assets." />
+  <link rel="icon" href="../assets/app/app-icon.png" />
+  <meta property="og:title" content="Trip Tunes — Press Kit" />
+  <meta property="og:description" content="Fact sheet, descriptions, screenshots, press coverage, and downloadable assets for Trip Tunes." />
+  <meta property="og:image" content="https://triptunes.xyz/assets/app/app-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    @font-face {
+      font-family: "Delicious Handrawn";
+      src: url("../assets/fonts/DeliciousHandrawn-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+    :root {
+      --coral: #FA8E85; --rust: #C9462F; --cream: #F6F1E4; --paper: #FBF7EC;
+      --navy: #011E2D; --gold: #F4C20D; --ink: #2c2620; --muted: #7a6c5f; --line: #e2d8c4;
+      --hand: "Delicious Handrawn", "Marker Felt", cursive;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--ink); background: var(--cream); line-height: 1.6; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--rust); }
+    h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 4px; letter-spacing: -.01em; }
+    .section { padding: 36px 0; border-top: 1px solid var(--line); }
+    .section > p.lead { color: var(--muted); margin-bottom: 18px; }
+
+    /* ---- App Store badge (CSS placeholder — swap for the official badge) ---- */
+    .appstore { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: var(--navy); color: #fff; padding: 10px 18px; border-radius: 10px; }
+    .appstore svg { width: 20px; height: 20px; fill: #fff; }
+    .appstore small { display: block; font-size: .6rem; line-height: 1; opacity: .85; }
+    .appstore strong { display: block; font-size: 1rem; line-height: 1.15; }
+
+    /* ---- Header ---- */
+    header { background: var(--paper); border-bottom: 4px solid var(--gold); }
+    .ph { display: flex; align-items: center; gap: 22px; padding: 30px 24px; max-width: 860px; margin: 0 auto; flex-wrap: wrap; }
+    .ph img.icon { width: 96px; height: 96px; border-radius: 21px; box-shadow: 0 6px 16px rgba(1,30,45,.2); }
+    .ph .titles { flex: 1; min-width: 240px; }
+    .kicker { font-family: -apple-system, sans-serif; text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; color: var(--rust); font-weight: 700; }
+    .ph h1 { font-family: var(--hand); font-size: 3rem; color: var(--navy); line-height: 1; margin: 2px 0; }
+    .ph .tagline { font-family: var(--hand); font-size: 1.4rem; color: var(--coral); }
+    .ph .cta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+
+    /* ---- Fact sheet ---- */
+    .facts { display: grid; grid-template-columns: 170px 1fr; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--paper); }
+    .facts dt { font-weight: 700; color: var(--navy); padding: 10px 16px; border-top: 1px solid var(--line); background: rgba(0,0,0,.015); }
+    .facts dd { padding: 10px 16px; border-top: 1px solid var(--line); }
+    .facts dt:first-of-type, .facts dd:first-of-type { border-top: none; }
+
+    /* ---- copy-friendly blocks ---- */
+    .copyblock { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--coral); border-radius: 6px; padding: 16px 18px; margin-top: 12px; }
+    .copyblock + .copyblock { margin-top: 14px; }
+    .label { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
+
+    ul.features { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 8px 24px; }
+    ul.features li { padding-left: 22px; position: relative; }
+    ul.features li::before { content: "▸"; color: var(--coral); position: absolute; left: 0; }
+
+    .chip { background: var(--navy); color: var(--cream); padding: 10px 16px; border-radius: 8px; font-size: .95rem; }
+    .chip .star { color: var(--gold); }
+    .recog-chips { display: flex; flex-direction: column; gap: 12px; }
+    .recog-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 28px; align-items: center; }
+    .features-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; }
+    figure { margin: 0; }
+    figure img { width: 100%; display: block; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(1,30,45,.12); }
+    /* the Apple feature is a tall phone screenshot — cap its height instead of its width */
+    .recog-grid figure img { width: auto; max-height: 480px; margin: 0 auto; }
+    .features-grid figure img { max-width: 100%; }
+    figcaption { font-size: .82rem; color: var(--muted); margin-top: 8px; }
+    /* placeholder for an asset you still need to drop in */
+    .shot-placeholder { border: 2px dashed var(--coral); border-radius: 10px; background: var(--paper); color: var(--muted); padding: 44px 20px; text-align: center; font-size: .9rem; }
+    .shot-placeholder strong { display: block; color: var(--navy); margin-bottom: 4px; }
+
+    /* press list */
+    ul.press { list-style: none; }
+    ul.press li { padding: 9px 0; border-top: 1px solid var(--line); display: flex; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+    ul.press li:first-child { border-top: none; }
+    ul.press .outlet { font-weight: 700; color: var(--navy); min-width: 150px; }
+    .subhead { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--rust); font-weight: 700; margin: 22px 0 6px; }
+    .subhead:first-of-type { margin-top: 6px; }
+    .note { color: var(--muted); font-size: .85rem; margin: 0 0 10px; }
+    ul.press .vid { color: var(--coral); margin-right: 2px; }
+
+    /* screenshots */
+    .shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px,1fr)); gap: 12px; }
+    .shots a { display: block; }
+    .shots img { width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; }
+
+    .assets { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .assets img { width: 84px; height: 84px; border-radius: 18px; box-shadow: 0 4px 12px rgba(1,30,45,.18); }
+    .assets ul { list-style: none; }
+    .assets ul li { padding: 2px 0; }
+
+    .contact dt { font-weight: 700; color: var(--navy); }
+    .contact dl { display: grid; grid-template-columns: 130px 1fr; gap: 6px 12px; }
+
+    footer { border-top: 1px solid var(--line); padding: 24px; text-align: center; color: var(--muted); font-size: .85rem; }
+    .todo { color: var(--rust); font-style: italic; } /* placeholder text to fill in */
+
+    @media (max-width: 640px) {
+      .recog-grid, .features-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .facts, .contact dl { grid-template-columns: 1fr; }
+      .facts dt { border-top: 1px solid var(--line); }
+      .ph h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="ph">
+      <img class="icon" src="../assets/app/app-icon.png" alt="Trip Tunes app icon" />
+      <div class="titles">
+        <div class="kicker">Press Kit</div>
+        <h1>Trip Tunes</h1>
+        <div class="tagline">Road Trips, Rewound.</div>
+      </div>
+      <div class="cta">
+        <a class="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- AT A GLANCE -->
+    <section class="section">
+      <h2>At a glance</h2>
+      <dl class="facts">
+        <dt>App name</dt><dd>Trip Tunes</dd>
+        <dt>Tagline</dt><dd>Road Trips, Rewound.</dd>
+        <dt>Developer</dt><dd>Jeff Rames <span class="todo">(confirm studio/credit)</span></dd>
+        <dt>Category</dt><dd>Music</dd>
+        <dt>Platform</dt><dd>iOS (iPhone) · requires iOS 16 or later</dd>
+        <dt>Price</dt><dd>Free to download — starts with 2 free "tapes" (one playlist each)</dd>
+        <dt>In-app purchases</dt><dd>5 tapes · $0.99 &nbsp;|&nbsp; 15 tapes · $1.99 &nbsp;|&nbsp; 30 tapes · $2.99</dd>
+        <dt>Requirements</dt><dd>Apple Music subscription for full-song playback &amp; saving to library (optional — previews work without it)</dd>
+        <dt>App Store</dt><dd><a href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener">apps.apple.com/app/id6467522749</a></dd>
+        <dt>Website</dt><dd><a href="https://triptunes.xyz" target="_blank" rel="noopener">triptunes.xyz</a></dd>
+        <dt>Mastodon</dt><dd><a href="https://indieapps.space/@TripTunes" target="_blank" rel="noopener">@TripTunes@indieapps.space</a></dd>
+        <dt>Press contact</dt><dd><span class="todo">[press contact email]</span></dd>
+      </dl>
+    </section>
+
+    <!-- RECOGNITION (prominent, with the Apple feature screenshot) -->
+    <section class="section">
+      <h2>Recognition</h2>
+      <div class="recog-grid">
+        <figure>
+          <img src="../assets/press/apple-feature.jpeg" alt="Trip Tunes featured by Apple in the App Store — “Create Mixtapes With Trip Tunes,” Apps tab Listen Now" />
+          <figcaption>Featured by Apple — “Create Mixtapes With Trip Tunes,” App Store Apps tab.</figcaption>
+        </figure>
+        <div class="recog-chips">
+          <div class="chip"><span class="star">★</span> Featured by Apple in “Listen Now” / the Apps tab carousel</div>
+          <div class="chip"><span class="star">★</span> “App of the Year” feature — Texoma's Homepage</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section">
+      <h2>About</h2>
+      <p class="lead">Copy-ready descriptions.</p>
+      <div class="copyblock">
+        <div class="label">One-liner</div>
+        Trip Tunes crafts the perfect playlist for your road trip — exploring the local music scene along your route.
+      </div>
+      <div class="copyblock">
+        <div class="label">Short description</div>
+        Trip Tunes makes road trip playlists the way they used to be — crafted by hand and made to share. Enter a few details about your trip and music taste, and Trip Tunes curates a playlist that explores the local music scene and matches your vibe. Preview and edit it, save the tracks locally or to Apple Music, and share mixtapes with friends — no blank tape required.
+      </div>
+      <div class="copyblock">
+        <div class="label">Long description</div>
+        No more unraveling cassettes or relying on humans to help you find cool, local music. With Trip Tunes you enter your start and end points, optionally add a vibe and your favorite genres, and the app generates a playlist of at least thirty songs that digs into regional artists and local deep cuts. Preview every track, trim anything that doesn't fit, then keep the tracklist in the app or open it straight into Apple Music. Share your mixtapes with friends — complete with their own cover art — and collect free surprise "gift tapes" from Trip Tunes from time to time. You start with a couple of blank tapes; when they run out, grab more with a quick in-app purchase. Wrapped in a skeuomorphic 80s mixtape design, Trip Tunes turns the drive into the soundtrack.
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <h2>Key features</h2>
+      <div class="features-grid">
+        <ul class="features">
+          <li>Location-themed playlists with regional artist deep cuts</li>
+          <li>At least 30 songs per playlist, matched to your trip's vibe</li>
+          <li>Preview and edit the tracklist before saving</li>
+          <li>Save to Apple Music or keep the tracks locally</li>
+          <li>Share mixtapes with friends — each with its own cover art</li>
+          <li>Free surprise "gift tapes" dropped from time to time</li>
+          <li>Discover local artists you wouldn't have found otherwise</li>
+          <li>Skeuomorphic 80s mixtape visual design</li>
+        </ul>
+        <figure>
+          <img src="../assets/press/features-overview.png" alt="Trip Tunes features at a glance: generate playlists, themed to your trip, revisit mixes, save to Apple Music" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- PRESS COVERAGE -->
+    <section class="section">
+      <h2>Press coverage</h2>
+
+      <h3 class="subhead">Articles</h3>
+      <ul class="press">
+        <li><span class="outlet">iDownloadBlog</span> <a href="https://www.idownloadblog.com/2024/06/01/apps-of-the-week-part-94/" target="_blank" rel="noopener">Apps of the Week</a></li>
+        <li><span class="outlet">Texoma's Homepage</span> <a href="https://www.texomashomepage.com/what-the-tech/remember-mix-tapes-theyre-backsort-of/" target="_blank" rel="noopener">Remember mixtapes? They're back… sort of! (App of the Year)</a></li>
+      </ul>
+
+      <h3 class="subhead">TV &amp; video</h3>
+      <p class="note">The “What the Tech: App of the Day” segment, syndicated across affiliate stations.</p>
+      <ul class="press">
+        <li><span class="vid">▶</span> <span class="outlet">WRDW</span> <a href="https://www.wrdw.com/2024/08/05/what-tech-app-day-trip-tunes/" target="_blank" rel="noopener">What the Tech: App of the Day</a></li>
+        <li><span class="vid">▶</span> <span class="outlet">KOB4</span> <a href="https://www.kob.com/news/technology/trip-tunes-what-the-tech-app-of-the-day/" target="_blank" rel="noopener">What the Tech: App of the Day</a></li>
+        <li><span class="vid">▶</span> <span class="outlet">WFMZ 69 News</span> <a href="https://www.wfmz.com/video/what-the-tech-app-of-the-day-trip-tunes/video_eaafa2c0-3438-5bb9-9bb2-9e675ad5b639.html" target="_blank" rel="noopener">What the Tech: App of the Day</a></li>
+        <li><span class="vid">▶</span> <span class="outlet">KTBS 3</span> <a href="https://youtu.be/Mi0reMkB-gw" target="_blank" rel="noopener">What the Tech: App of the Day</a></li>
+        <li><span class="vid">▶</span> <span class="outlet">WAKA 8</span> <a href="https://www.waka.com/2024/08/09/what-the-tech-app-of-the-day-trip-tunes/" target="_blank" rel="noopener">What the Tech: App of the Day</a></li>
+        <li><span class="vid">▶</span> <span class="outlet">WILX 10</span> <a href="https://www.wilx.com/2024/12/27/what-tech-app-day-trip-tunes/" target="_blank" rel="noopener">What the Tech: App of the Day</a></li>
+        <li><span class="vid">▶</span> <span class="outlet">KTVN 2 News</span> <a href="https://www.2news.com/video/what-the-tech-trip-tunes/video_344cc58d-3ec2-5567-a3fe-76349718b504.html" target="_blank" rel="noopener">What the Tech: Trip Tunes</a></li>
+      </ul>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="section">
+      <h2>Screenshots</h2>
+      <p class="lead">Click any image for the full-resolution file.</p>
+      <div class="shots">
+        <a href="../assets/press/screenshot-library.jpeg" target="_blank"><img src="../assets/press/screenshot-library.jpeg" alt="Your tape library" /></a>
+        <a href="../assets/press/screenshot-input.jpeg" target="_blank"><img src="../assets/press/screenshot-input.jpeg" alt="Set up your trip" /></a>
+        <a href="../assets/press/screenshot-loading.jpeg" target="_blank"><img src="../assets/press/screenshot-loading.jpeg" alt="Generating the mixtape" /></a>
+        <a href="../assets/press/screenshot-playlist.png" target="_blank"><img src="../assets/press/screenshot-playlist.png" alt="A finished playlist" /></a>
+        <a href="../assets/press/screenshot-save.png" target="_blank"><img src="../assets/press/screenshot-save.png" alt="Save to Apple Music" /></a>
+        <a href="../assets/press/screenshot-library-2.jpeg" target="_blank"><img src="../assets/press/screenshot-library-2.jpeg" alt="Tape library" /></a>
+      </div>
+    </section>
+
+    <!-- ASSETS -->
+    <section class="section">
+      <h2>App icon &amp; assets</h2>
+      <div class="assets">
+        <img src="../assets/app/app-icon.png" alt="Trip Tunes app icon" />
+        <ul>
+          <li><a href="../assets/press/trip-tunes-press-kit.zip" download><strong>Download all assets (.zip)</strong></a> — app icon, every screenshot, and the feature images</li>
+          <li><a href="../assets/app/app-icon.png" download>App icon only (1024×1024 PNG)</a></li>
+          <li>Screenshots — see above (click any for the full-resolution file)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOILERPLATE -->
+    <section class="section">
+      <h2>Boilerplate</h2>
+      <div class="copyblock">
+        <div class="label">Who it's for</div>
+        People who love music and want to experience some local flavor when traveling. Bonus points if you're nostalgic for 80s mixtapes and endless road trips.
+      </div>
+      <div class="copyblock">
+        <div class="label">About Trip Tunes</div>
+        Trip Tunes is an iOS app that builds handcrafted road-trip playlists tuned to your route, your taste, and the local music scene — then lets you save them to Apple Music and share them as mixtapes. It wraps modern playlist generation in a nostalgic 80s cassette aesthetic. Available now on the App Store.
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact">
+      <h2>Contact</h2>
+      <dl>
+        <dt>Developer</dt><dd>Jeff Rames <span class="todo">(confirm)</span></dd>
+        <dt>Press email</dt><dd><span class="todo">[press contact email]</span></dd>
+        <dt>App Store</dt><dd><a href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener">Trip Tunes on the App Store</a></dd>
+        <dt>Mastodon</dt><dd><a href="https://indieapps.space/@TripTunes" target="_blank" rel="noopener">@TripTunes@indieapps.space</a></dd>
+      </dl>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Trip Tunes · Not affiliated with Apple. Apple Music is a trademark of Apple Inc.
+  </footer>
+
+</body>
+</html>
