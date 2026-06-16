@@ -204,6 +204,7 @@
 
     /* ===== Reviews — mixtape liner-note cards ===== */
     .reviews { padding: 72px 0; }
+    .reviews-tagline { font-family: var(--hand); font-size: clamp(1.7rem, 4vw, 2.5rem); color: var(--navy); text-align: center; line-height: 1.12; max-width: 20ch; margin: 0 auto 20px; }
     /* extra vertical padding so the rotated notes aren't clipped by the scroller */
     .review-row { max-width: 1100px; margin: 0 auto; padding: 32px 24px 38px; }
     .review-card { width: 320px; padding: 22px; display: flex; flex-direction: column; }
@@ -250,8 +251,8 @@
   <header id="hero" class="wrap hero">
     <div>
       <p class="eyebrow">★ Side A · Est. 2024 ★</p>
-      <h1>Road trip<br/>playlists,<br/>by hand.</h1>
-      <p class="lede">The mixtape, reborn — crafted for your route, your taste, and the local music scene. And made to share.</p>
+      <h1>The mixtape<br/>is back.</h1>
+      <p class="lede">Tell Trip Tunes where you're going and what you're into. It builds a custom road trip soundtrack inspired by your route, your taste, and the music you'll pass along the way.</p>
       <div class="hero-cta">
         <a class="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
         <span class="freebie">+ free blank tapes to start!</span>
@@ -273,8 +274,8 @@
     <h2 class="section-title">How it works</h2>
     <p class="section-sub">// LET THE TIRELESS ROBOTS DO THE WORK //</p>
     <div class="steps">
-      <div class="step"><div class="num">01</div><h3>Tell us your trip</h3><p>A few quick details about your route and your music taste.</p></div>
-      <div class="step"><div class="num">02</div><h3>Let it dig</h3><p>Trip Tunes explores the local scene and matches your trip's vibe.</p></div>
+      <div class="step"><div class="num">01</div><h3>Tell us your trip</h3><p>Tell us where you're headed, what you're listening to, and the vibe you're after.</p></div>
+      <div class="step"><div class="num">02</div><h3>Let it dig</h3><p>Trip Tunes searches far beyond your usual playlists to uncover music connected to the places you'll pass through.</p></div>
       <div class="step"><div class="num">03</div><h3>Preview &amp; edit</h3><p>Tweak the tracklist, then save it locally or in Apple Music.</p></div>
       <div class="step"><div class="num">04</div><h3>Share it</h3><p>Send mixtapes to friends — no blank tape required.</p></div>
     </div>
@@ -302,7 +303,7 @@
   <section class="band band-pale flip">
     <div class="feature">
       <div class="shot"><img src="assets/screenshots/framed-loading.png" alt="Watch the mixtape come together" /></div>
-      <div><p class="tag">TRACK 02</p><h3>Watch it spin up</h3><p>The reels turn while Trip Tunes writes your tracklist, one song at a time.</p></div>
+      <div><p class="tag">TRACK 02</p><h3>Watch it spin up</h3><p>The reels start turning while Trip Tunes builds a soundtrack for the road ahead.</p></div>
     </div>
   </section>
   <section class="band band-blue">
@@ -321,7 +322,7 @@
       </div>
       <div>
         <p class="tag">TRACK 04</p><h3>Save to Apple Music</h3>
-        <p>Open your mixtape straight into Apple Music — fully playable, in one tap.</p>
+        <p>One tap and your mixtape is waiting in Apple Music, ready for the drive.</p>
         <p class="fineprint">Apple Music is a trademark of Apple Inc. Trip Tunes isn't affiliated with Apple.</p>
       </div>
     </div>
@@ -329,13 +330,14 @@
   <section class="band band-pale">
     <div class="feature">
       <div class="shot"><img src="assets/screenshots/framed-share.png" alt="Share your mixtape" /></div>
-      <div><p class="tag">TRACK 05</p><h3>Share your mixtape</h3><p>Send a mix with its own cover art. Friends open and enjoy it instantly.</p></div>
+      <div><p class="tag">TRACK 05</p><h3>Share your mixtape</h3><p>Great road trips deserve great mixtapes. Share yours with a custom cover and a single tap.</p></div>
     </div>
   </section>
 
   <!-- REVIEWS — real App Store reviews -->
   <section id="reviews" class="reviews">
     <div class="wrap">
+      <p class="reviews-tagline">Built for people who still believe the music matters.</p>
       <h2 class="section-title">From the App Store</h2>
       <p class="section-sub">// ★★★★★ FROM REAL ROAD TRIPPERS //</p>
     </div>
@@ -400,7 +402,7 @@
   <section class="wrap">
     <div class="gift">
       <h3>Score free gift tapes 🎁</h3>
-      <p>You start with a few blank tapes — each good for one playlist. When they run out, grab more with a quick in-app purchase. And every so often, Trip Tunes drops surprise gift mixes you can open and enjoy right away.</p>
+      <p>Every new traveler gets a handful of blank tapes to create playlists. Need more? Pick up additional tapes anytime, and keep an eye out for surprise gift tapes along the way.</p>
     </div>
     <p class="disclaimer">For the full experience you'll need an Apple Music subscription. Without one, you can preview tracks but can't play full songs or save playlists to your library. Trip Tunes isn't affiliated with Apple.</p>
   </section>
