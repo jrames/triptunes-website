@@ -54,9 +54,6 @@ bandwidth, 500 builds/mo, custom domains). Since the domain and
 
 ## Still to fill in
 
-- **Press contact email** — `press-kit/`, search `[press contact email]`.
-- **Developer credit** — currently "Jeff Rames"; confirm or change (search
-  `(confirm`).
 - Optional: a dedicated social-share image (1200×630) for `og:image` — currently
   uses the app icon.
 

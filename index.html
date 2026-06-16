@@ -34,6 +34,7 @@
     html { font-size: 17px; } /* nudge the whole type scale up from the 16px default */
     body {
       font-family: Georgia, "Times New Roman", serif; color: var(--ink); line-height: 1.6;
+      overflow-x: clip; /* the hero phone-peek overhangs slightly; prevents a horizontal scrollbar without breaking sticky nav */
       background:
         radial-gradient(circle at 18% 12%, rgba(250,142,133,.20), transparent 40%),
         radial-gradient(circle at 82% 8%, rgba(244,194,13,.18), transparent 38%),
@@ -93,7 +94,7 @@
       to   { transform: translate(-50%, -50%) rotate(-360deg); }
     }
     @media (prefers-reduced-motion: reduce) { .spool { animation: none; } }
-    .phone-peek { position: absolute; right: -6%; bottom: -10%; width: 142px; border-radius: 22px; box-shadow: 0 14px 30px rgba(1,30,45,.3); transform: rotate(6deg); border: 4px solid #111; }
+    .phone-peek { position: absolute; right: -16%; bottom: -12%; width: 190px; filter: drop-shadow(0 14px 24px rgba(1,30,45,.34)); transform: rotate(6deg); }
 
     /* ===== Press marquee ===== */
     .press { background: var(--navy); color: var(--cream); border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); padding: 22px 24px; text-align: center; }
@@ -132,11 +133,16 @@
 
     /* ===== Feature bands — full-bleed stripe tinted to each screenshot's frame, so the shot blends in ===== */
     .band { width: 100%; }
-    .band .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+    .band .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1000px; margin: 0 auto; padding: 26px 24px; }
     .band.flip .shot { order: 2; }
     .band .shot { display: grid; place-items: center; }
-    /* no frame / no radius / no shadow — the rectangle dissolves into the band */
-    .band .shot img { width: 100%; max-width: 320px; display: block; }
+    /* framed phone mockups (bezel baked into the PNG with transparent corners) float on the band */
+    .band .shot img { width: 100%; max-width: 250px; display: block; filter: drop-shadow(0 20px 30px rgba(1,30,45,.32)); }
+    /* dual-phone composition (top of one, bottom of another) — e.g. Save to Apple Music */
+    .duo { position: relative; width: 100%; max-width: 330px; margin: 0 auto; aspect-ratio: 1 / 1.06; }
+    .duo img { position: absolute; width: 62%; max-width: none; }
+    .duo .front { left: 0; top: 0; transform: rotate(-5deg); z-index: 2; }
+    .duo .back  { right: 0; bottom: 6%; transform: rotate(4deg); }
     .band h3 { font-family: var(--hand); font-size: 2.8rem; }
     .band p { font-size: 1.12rem; margin-top: 8px; }
     .band .tag { font-family: var(--mono); letter-spacing: 2px; font-size: 1.1rem; }
@@ -153,6 +159,18 @@
     .band-pale .feature { color: var(--ink); }
     .band-pale h3 { color: var(--navy); text-shadow: 2px 2px 0 var(--coral); }
     .band-pale .tag { color: var(--rust); }
+    .fineprint { font-size: .8rem; opacity: .8; margin-top: 14px; max-width: 34ch; }
+
+    /* ===== See it in action (demo video) ===== */
+    .demo { padding: 8px 24px 84px; text-align: center; }
+    /* demo video has the device frame baked into the pixels (no CSS clip — Safari-proof) */
+    .demo-phone { display: inline-block; width: 100%; max-width: 300px; }
+    /* mask the video to the phone shape so the real page shows through the corners
+       (mask-image works on <video> in Safari, unlike overflow:hidden + border-radius) */
+    .demo-phone video { width: 100%; height: auto; display: block;
+      -webkit-mask-image: url(assets/video/demo-phone-mask.png); mask-image: url(assets/video/demo-phone-mask.png);
+      -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
 
     /* ===== Gift sticky note ===== */
     .gift { background: var(--gold); border: 3px solid var(--ink); border-radius: 4px; padding: 40px; max-width: 740px; margin: 0 auto; transform: rotate(-1.2deg); box-shadow: 8px 10px 0 rgba(0,0,0,.18); }
@@ -246,7 +264,7 @@
         <img class="spool spool-l" src="assets/app/loading_left_spool.png" alt="" />
         <img class="spool spool-r" src="assets/app/loading_left_spool.png" alt="" />
       </div>
-      <img class="phone-peek" src="assets/screenshots/tape-library.png" alt="Trip Tunes tape library" />
+      <img class="phone-peek" src="assets/screenshots/framed-library.png" alt="Trip Tunes tape library" />
     </div>
   </header>
 
@@ -262,35 +280,55 @@
     </div>
   </section>
 
+  <!-- SEE IT IN ACTION -->
+  <section id="demo" class="demo">
+    <h2 class="section-title">See it in action</h2>
+    <p class="section-sub">// FROM BLANK TAPE TO FULL MIXTAPE //</p>
+    <div class="demo-phone">
+      <video width="814" height="1724" poster="assets/video/demo-poster-framed.jpg" muted loop autoplay playsinline preload="metadata">
+        <source src="assets/video/triptunes-demo-framed.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
   <!-- FEATURES -->
-  <!-- Each band is tinted to match the screenshot's frame so the shot blends in -->
+  <!-- Framed phone mockups (bezels baked into the PNGs) float on the colored bands -->
   <section id="features" class="band band-coral">
     <div class="feature">
-      <div class="shot"><img src="assets/screenshots/pick-trip.png" alt="Pick your trip and vibe" /></div>
+      <div class="shot"><img src="assets/screenshots/framed-input.png" alt="Pick your trip and vibe" /></div>
       <div><p class="tag">TRACK 01</p><h3>Pick your trip &amp; vibe</h3><p>From, to, genres, and the mood of the drive. A few taps sets the tone.</p></div>
     </div>
   </section>
   <section class="band band-pale flip">
     <div class="feature">
-      <div class="shot"><img src="assets/screenshots/create-mixtape.png" alt="Watch the mixtape come together" /></div>
+      <div class="shot"><img src="assets/screenshots/framed-loading.png" alt="Watch the mixtape come together" /></div>
       <div><p class="tag">TRACK 02</p><h3>Watch it spin up</h3><p>The reels turn while Trip Tunes writes your tracklist, one song at a time.</p></div>
     </div>
   </section>
   <section class="band band-blue">
     <div class="feature">
-      <div class="shot"><img src="assets/screenshots/edit-mixtape.png" alt="Edit your mixtape" /></div>
+      <div class="shot"><img src="assets/screenshots/framed-playlist.png" alt="Your finished mixtape" /></div>
       <div><p class="tag">TRACK 03</p><h3>Make it yours</h3><p>Preview every track and trim anything that doesn't fit before you save.</p></div>
     </div>
   </section>
   <section class="band band-coral flip">
     <div class="feature">
-      <div class="shot"><img src="assets/screenshots/save-apple-music.png" alt="Save to Apple Music" /></div>
-      <div><p class="tag">TRACK 04</p><h3>Save to Apple Music</h3><p>Keep the tracklist in Trip Tunes, or open it into Apple Music in one tap.</p></div>
+      <div class="shot">
+        <div class="duo">
+          <img class="back" src="assets/screenshots/framed-applemusic.png" alt="The mixtape playing in Apple Music" />
+          <img class="front" src="assets/screenshots/framed-save.png" alt="Save & Open In Apple Music in Trip Tunes" />
+        </div>
+      </div>
+      <div>
+        <p class="tag">TRACK 04</p><h3>Save to Apple Music</h3>
+        <p>Open your mixtape straight into Apple Music — fully playable, in one tap.</p>
+        <p class="fineprint">Apple Music is a trademark of Apple Inc. Trip Tunes isn't affiliated with Apple.</p>
+      </div>
     </div>
   </section>
   <section class="band band-pale">
     <div class="feature">
-      <div class="shot"><img src="assets/screenshots/share-mixtape.png" alt="Share your mixtape" /></div>
+      <div class="shot"><img src="assets/screenshots/framed-share.png" alt="Share your mixtape" /></div>
       <div><p class="tag">TRACK 05</p><h3>Share your mixtape</h3><p>Send a mix with its own cover art. Friends open and enjoy it instantly.</p></div>
     </div>
   </section>

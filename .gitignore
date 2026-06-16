@@ -21,3 +21,8 @@ node_modules/
 
 # Earlier design demos + old stub — kept locally, not deployed
 _archive/
+*.mov
+assets/screenshots/Simulator Screenshot*
+assets/screenshots/raw-*
+# Large source mockup(s) — transcoded to triptunes-demo-framed.mp4; kept local, not deployed
+assets/video/Detail Mockup*.MP4
