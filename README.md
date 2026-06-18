@@ -8,6 +8,7 @@ plain HTML/CSS/JS that can be served by any static host.
 ```
 index.html        → the marketing homepage          (triptunes.xyz/)
 press-kit/    → the press kit                    (triptunes.xyz/press-kit/)
+privacy/          → privacy policy (iOS app)        (triptunes.xyz/privacy/)
 assets/
   fonts/          → Delicious Handrawn (the app font)
   app/            → cassette + spool art, app icon
