@@ -74,6 +74,33 @@ body in system serif/sans.
   Script is on each page; click events use `data-goatcounter-click` (`appstore`,
   `press-kit`). It is intentionally **not** on `/privacy/`.
 
+## Gift tapes (`/tapes/`)
+
+A hub-and-spoke gallery of curated "gift tape" playlists — an SEO + sharing
+surface that links back into the app. **Generated**, not hand-written:
+
+- `tools/tape-payloads/<slug>.json` — the raw share-link JSON (the KV *value*)
+  for each tape. Fetch one with `curl https://share.triptunes.xyz/playlist/<KV-key>`.
+- `tools/tapes.json` — the editorial table, one entry per tape:
+  `{slug, key, title, h1, kicker, teaser, meta, blurb[]}`. `key` is the KV key;
+  the page's "Open in Trip Tunes" button links to `https://share.triptunes.xyz/p/<key>`.
+- `tools/build_tapes.py` — reads both and writes `tapes/index.html` (hub) +
+  `tapes/<slug>/index.html` (one per tape), with each tracklist/artwork/30s
+  preview embedded as a **static snapshot** (re-run if a tape's KV value changes).
+
+**Add a tape:** drop the payload at `tools/tape-payloads/<slug>.json`, add a
+matching entry to `tools/tapes.json`, then `python3 tools/build_tapes.py`. The
+`/create_mix` skill automates all of that + render-check + commit/push.
+
+**Apple ToS (keep intact):** previews + artwork run under Apple's
+promotional-content terms — every track links to Apple Music, previews are
+**streamed only** (never downloaded/cached/rehosted), there's a "courtesy of
+iTunes / Apple Music" attribution line, and the social-card image is the app
+icon, **not** album art.
+
+`/tapes/` is currently **not linked** from the main nav — add the link when
+ready to surface it publicly.
+
 ## Working style
 
 - **Verify visual changes yourself** before asking the user: headless Chrome

@@ -1,0 +1,603 @@
+{
+  "persisted": false,
+  "id": "58608A16-FC8A-46A1-BD59-4956A1A31CAC",
+  "basicSongs": [
+    {
+      "title": "Autumn In New York",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e8/58/e5/e858e5de-72d1-835b-e228-ca80b6fe36b3/mzaf_9501332738886659060.plus.aac.p.m4a",
+      "artistName": "Ella Fitzgerald & Louis Armstrong",
+      "id": "1442956066",
+      "artwork": {
+        "height": 3000,
+        "textColor3": "ae9a82",
+        "bgColor": "081922",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ba/82/97/ba8297ec-91b4-b660-ce5c-7116a7bb7841/06UMGIM11030.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor2": "cca17c",
+        "textColor4": "a5866a",
+        "textColor1": "d7ba9a",
+        "width": 3000
+      }
+    },
+    {
+      "title": "Fireworks",
+      "id": "1298786052",
+      "artwork": {
+        "textColor4": "bfb9b4",
+        "textColor1": "f6ede5",
+        "height": 1500,
+        "textColor2": "e8e0d9",
+        "bgColor": "1c1b20",
+        "width": 1500,
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b1/4b/87/b14b873c-e987-b447-fbf7-9793b939f8db/886446818238.jpg/{w}x{h}bb.jpg",
+        "textColor3": "cac3be"
+      },
+      "artistName": "First Aid Kit",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/23/22/c6/2322c650-17ff-53d7-308c-c5bb49b7befa/mzaf_13011199508717130959.plus.aac.p.m4a"
+    },
+    {
+      "title": "Slow Burn",
+      "id": "1440918117",
+      "artwork": {
+        "textColor4": "c9ad9c",
+        "width": 3000,
+        "height": 3000,
+        "textColor1": "fde2d9",
+        "bgColor": "00659c",
+        "textColor2": "fcbf9d",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/61/45/e8/6145e88a-6a79-fab1-ad8f-5ffdcbf44a28/18UMGIM03879.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor3": "cac9cd"
+      },
+      "artistName": "Kacey Musgraves",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/6a/b1/a5/6ab1a5e3-4638-a32d-fde6-e7a31970f4df/mzaf_11323234264515854482.plus.aac.p.m4a"
+    },
+    {
+      "title": "Heartbeats",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/32/87/b6/3287b631-6497-8dfe-9766-77c1427848e7/mzaf_6755861276223187353.plus.aac.p.m4a",
+      "artistName": "Jos\u00e9 Gonz\u00e1lez",
+      "id": "828118037",
+      "artwork": {
+        "height": 1425,
+        "textColor3": "303027",
+        "bgColor": "c2bf9e",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/74/4e/93/744e930f-65d9-dffb-5d86-1360bb5a6bc5/724596932452.jpg/{w}x{h}bb.jpg",
+        "textColor2": "0e0e0c",
+        "textColor4": "323129",
+        "textColor1": "0c0c0a",
+        "width": 1425
+      }
+    },
+    {
+      "title": "Holocene",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/48/b8/2f/48b82fda-b8cc-9a33-6ae5-770120952e77/mzaf_1047839549153293302.plus.aac.p.m4a",
+      "artistName": "Bon Iver",
+      "id": "438685989",
+      "artwork": {
+        "height": 900,
+        "textColor3": "363432",
+        "bgColor": "f0ede8",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ac/f9/a6/acf9a654-55d3-29b8-cac0-fef50ac5a5be/mzi.gshakpry.jpg/{w}x{h}bb.jpg",
+        "textColor2": "1a1b14",
+        "textColor4": "44453e",
+        "textColor1": "080604",
+        "width": 900
+      }
+    },
+    {
+      "title": "Light Years",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/26/0a/5e/260a5ece-de51-1f90-3b8b-bd123ab77e02/mzaf_12249572094476428976.plus.aac.p.m4a",
+      "artistName": "The National",
+      "id": "1453848494",
+      "artwork": {
+        "height": 4000,
+        "textColor3": "484645",
+        "bgColor": "eaeaea",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/de/99/4a/de994a87-4293-adb5-9119-d4f5b2336e13/191400015456.png/{w}x{h}bb.jpg",
+        "textColor2": "2f2d2b",
+        "textColor4": "545351",
+        "textColor1": "201d1b",
+        "width": 4000
+      }
+    },
+    {
+      "title": "Landslide (Remastered)",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/df/33/01/df330182-3755-e3d4-2cdf-83a2d407c2e9/mzaf_15919999017005344577.plus.aac.p.m4a",
+      "artistName": "Fleetwood Mac",
+      "id": "1308648844",
+      "artwork": {
+        "height": 2400,
+        "textColor3": "3e3e3e",
+        "bgColor": "ffffff",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/64/cc/0b/64cc0b3b-92fb-66cf-1240-e2afba504e4b/603497863105.jpg/{w}x{h}bb.jpg",
+        "textColor2": "272728",
+        "textColor4": "525253",
+        "textColor1": "0e0e0e",
+        "width": 2400
+      }
+    },
+    {
+      "title": "Almost (Sweet Music)",
+      "id": "1732773508",
+      "artwork": {
+        "textColor4": "8f9aa0",
+        "width": 3000,
+        "textColor1": "7acecb",
+        "textColor2": "b0bec6",
+        "bgColor": "090b0a",
+        "height": 3000,
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6d/cc/97/6dcc974c-35ea-abf0-baed-d39217e4f812/196871873871.jpg/{w}x{h}bb.jpg",
+        "textColor3": "63a7a4"
+      },
+      "artistName": "Hozier",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/2a/55/79/2a5579b5-505b-f6f9-6c4a-d64e8fe5e46f/mzaf_18444429287183132765.plus.aac.p.m4a"
+    },
+    {
+      "title": "Mystery of Love (From \u201cCall Me By Your Name\u201d)",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/73/5f/3d/735f3ddf-b063-1f18-db94-ab20e888edb3/mzaf_16854351342495465745.plus.aac.p.m4a",
+      "artistName": "Sufjan Stevens",
+      "id": "1318981699",
+      "artwork": {
+        "height": 3000,
+        "textColor3": "c6d69e",
+        "bgColor": "044e90",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/06/92/3c/06923c8d-1524-b097-1779-b7aebbd6aec2/CMBYN_Mystery_of_Love_Digital_Cover.jpg/{w}x{h}bb.jpg",
+        "textColor2": "fbd7d6",
+        "textColor4": "c9bcc8",
+        "textColor1": "f6f7a1",
+        "width": 3000
+      }
+    },
+    {
+      "artistName": "The Head and the Heart",
+      "title": "Rivers and Roads",
+      "artwork": {
+        "bgColor": "afb0ae",
+        "textColor4": "414240",
+        "textColor2": "262724",
+        "textColor1": "050404",
+        "height": 1400,
+        "width": 1400,
+        "textColor3": "272726",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/4d/d9/974dd997-73af-5ed2-530c-892ec10f9deb/0098787091564_Cover.jpg/{w}x{h}bb.jpg"
+      },
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fd/fb/f1/fdfbf194-8a72-340c-802f-11e485211ab0/mzaf_7064874300903139597.plus.aac.p.m4a",
+      "id": "1771697405"
+    },
+    {
+      "title": "Wicked Game",
+      "id": "1570350115",
+      "artwork": {
+        "textColor4": "ada9aa",
+        "width": 3000,
+        "textColor1": "e4e1e0",
+        "height": 3000,
+        "bgColor": "212022",
+        "textColor2": "d0cccc",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d0/34/9b/d0349b33-35fb-8913-8755-08b6a1bdd382/21UMGIM47740.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor3": "bdbaba"
+      },
+      "artistName": "Chris Isaak",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d4/f5/6f/d4f56fb1-f9ce-627a-2cc3-5f5b28e96692/mzaf_7197782946271526766.plus.aac.p.m4a"
+    },
+    {
+      "title": "The Night We Met",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4b/36/b7/4b36b739-1de7-e0ae-45da-9a66463127ac/mzaf_1821541347983595183.plus.aac.p.m4a",
+      "artistName": "Lord Huron",
+      "id": "1806531961",
+      "artwork": {
+        "height": 1400,
+        "textColor3": "a0a59c",
+        "bgColor": "171819",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/55/41/4a/55414a18-861a-79d1-e575-5bf8cf205dbe/886445056839_Cover.jpg/{w}x{h}bb.jpg",
+        "textColor2": "c9b271",
+        "textColor4": "a6935f",
+        "textColor1": "c3c9bd",
+        "width": 1400
+      }
+    },
+    {
+      "title": "Nightswimming",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ea/1a/8c/ea1a8cc2-c381-2b2e-4573-40d2be87f715/mzaf_1647963141041249144.plus.aac.p.m4a",
+      "artistName": "R.E.M.",
+      "id": "1422694732",
+      "artwork": {
+        "height": 3000,
+        "textColor3": "0e2c30",
+        "bgColor": "06acbe",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d4/9c/f6/d49cf63f-a412-5737-9392-1576c297b475/00888072396272.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor2": "131111",
+        "textColor4": "103034",
+        "textColor1": "100c0c",
+        "width": 3000
+      }
+    },
+    {
+      "artistName": "Neil Young",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4f/1c/8b/4f1c8bf4-f722-ccc4-8c17-b66a8dd9d9b2/mzaf_15583428328332183741.plus.aac.p.m4a",
+      "id": "135132767",
+      "artwork": {
+        "bgColor": "181e1c",
+        "textColor4": "b2b3b2",
+        "textColor2": "d9d8d8",
+        "textColor1": "f6f3f4",
+        "height": 1477,
+        "width": 1500,
+        "textColor3": "c9c8c9",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4d/45/41/4d45414c-6364-51cf-2874-7c8aa755caaa/mzi.oetoyyot.jpg/{w}x{h}bb.jpg"
+      },
+      "title": "Harvest Moon"
+    },
+    {
+      "title": "October",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/73/36/f3/7336f3ae-cb08-1ad5-3568-12495b13798d/mzaf_7615312010791615084.plus.aac.p.m4a",
+      "artistName": "U2",
+      "id": "1440894920",
+      "artwork": {
+        "height": 3000,
+        "textColor3": "322d20",
+        "bgColor": "b5ae84",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/cd/b2/d9cdb23f-37a3-9c90-4bbf-e4b99c6b8228/17UMGIM84937.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor2": "241b10",
+        "textColor4": "413927",
+        "textColor1": "120d08",
+        "width": 3000
+      }
+    },
+    {
+      "title": "Raining In Baltimore",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0e/02/23/0e0223cb-d0cf-2820-62c2-e41c2911682f/mzaf_18359692807950262707.plus.aac.p.m4a",
+      "artistName": "Counting Crows",
+      "id": "1442449732",
+      "artwork": {
+        "height": 1420,
+        "textColor3": "403118",
+        "bgColor": "f7ce71",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/3b/dc/90/3bdc90a2-3697-0c5e-3265-65ccaa7dcbb3/14UMGIM00847.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor2": "1a1608",
+        "textColor4": "473a1d",
+        "textColor1": "120902",
+        "width": 1420
+      }
+    },
+    {
+      "title": "Autumn Sweater",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/af/1c/6d/af1c6d98-4856-7a10-9e30-d0266a1f919d/mzaf_7998613698970017223.plus.aac.p.m4a",
+      "artistName": "Yo La Tengo",
+      "id": "1589243062",
+      "artwork": {
+        "height": 4000,
+        "textColor3": "e7cc9f",
+        "bgColor": "b52310",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/8d/e7/3f/8de73fa0-b828-7c46-87e7-3df1fd89a7e8/744861022237.png/{w}x{h}bb.jpg",
+        "textColor2": "f4e9a5",
+        "textColor4": "e8c187",
+        "textColor1": "f4f6c3",
+        "width": 4000
+      }
+    },
+    {
+      "title": "Pale September",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/da/9d/03/da9d0323-9fc6-247b-dcda-b7b1bcc25762/mzaf_15792796548247590362.plus.aac.p.m4a",
+      "artistName": "Fiona Apple",
+      "id": "309677280",
+      "artwork": {
+        "height": 3252,
+        "textColor3": "525656",
+        "bgColor": "f7f8fa",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4f/57/2f/4f572ff0-e5f0-b39e-b6b0-1ae7c9f922af/884977129762.jpg/{w}x{h}bb.jpg",
+        "textColor2": "392b29",
+        "textColor4": "5f5453",
+        "textColor1": "292d2d",
+        "width": 3252
+      }
+    },
+    {
+      "title": "Big Black Car",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b1/ca/74/b1ca74da-1b0b-e506-5827-6dcd8628b311/mzaf_12992334058582266842.plus.aac.p.m4a",
+      "artistName": "Gregory Alan Isakov",
+      "id": "316335886",
+      "artwork": {
+        "height": 600,
+        "textColor3": "bb9357",
+        "bgColor": "2a1824",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/99/1c/79/991c79fb-60fd-8ea2-a3fe-696f6f227844/mzi.vlwdrreu.jpg/{w}x{h}bb.jpg",
+        "textColor2": "d5a884",
+        "textColor4": "b28b71",
+        "textColor1": "e0b264",
+        "width": 600
+      }
+    },
+    {
+      "title": "Wake Me Up When September Ends",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/35/a1/e7/35a1e72c-b1ff-3632-f5d5-8384e5a8759a/mzaf_559526960835687246.plus.aac.p.m4a",
+      "artistName": "Green Day",
+      "id": "1161539483",
+      "artwork": {
+        "height": 1425,
+        "textColor3": "b6b6bc",
+        "bgColor": "000110",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/0e/17/f0/0e17f011-aadf-d4d1-1c7e-b61ce39f968b/093624947301.jpg/{w}x{h}bb.jpg",
+        "textColor2": "c8c9d2",
+        "textColor4": "a0a1ab",
+        "textColor1": "e4e4e7",
+        "width": 1425
+      }
+    },
+    {
+      "title": "Sweater Weather",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/44/46/c6/4446c68f-6837-076d-4450-27afec090fb1/mzaf_17829262704790883054.plus.aac.p.m4a",
+      "artistName": "The Neighbourhood",
+      "id": "635016640",
+      "artwork": {
+        "height": 3840,
+        "textColor3": "d2d2d2",
+        "bgColor": "4b4b4b",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/28/71/00/287100fb-5c31-0195-5343-e6b3625886d0/886443969834.jpg/{w}x{h}bb.jpg",
+        "textColor2": "eaeaea",
+        "textColor4": "cacaca",
+        "textColor1": "f4f4f4",
+        "width": 3840
+      }
+    },
+    {
+      "title": "Autumn Leaves",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/93/06/1b/93061b3e-23d8-ea8d-ff01-b97513fe04c6/mzaf_17384989965975166128.plus.aac.p.m4a",
+      "artistName": "Eva Cassidy",
+      "id": "306987175",
+      "artwork": {
+        "height": 1425,
+        "textColor3": "e4ddd2",
+        "bgColor": "795a43",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/60/5d/0f/605d0f63-acdb-5016-4627-cc529bea5347/739341004568.jpg/{w}x{h}bb.jpg",
+        "textColor2": "efe5d4",
+        "textColor4": "d7c9b7",
+        "textColor1": "fffff6",
+        "width": 1425
+      }
+    },
+    {
+      "title": "Naked As We Came",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f8/93/db/f893dbf2-52e2-a226-9758-cdecb32e3622/mzaf_575049965285014295.plus.aac.p.m4a",
+      "artistName": "Iron & Wine",
+      "id": "5644874",
+      "artwork": {
+        "height": 1425,
+        "textColor3": "b5bec5",
+        "bgColor": "1a211a",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8c/89/fb/8c89fbb6-8822-1490-0e70-a90e5ddc97e2/s05.jgqayucj.jpg/{w}x{h}bb.jpg",
+        "textColor2": "b4d26a",
+        "textColor4": "95af5a",
+        "textColor1": "dce6f0",
+        "width": 1425
+      }
+    },
+    {
+      "title": "Moondance",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/80/20/5a/80205a8d-9816-80a0-8cd4-e8a78f367490/mzaf_16423546555609360234.plus.aac.p.m4a",
+      "artistName": "Van Morrison",
+      "id": "712727646",
+      "artwork": {
+        "height": 2400,
+        "textColor3": "3f342f",
+        "bgColor": "e7d0ae",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/9b/ce/1d/9bce1dac-d5e9-d8b5-8b02-28bd59ee6228/603497940639_02.jpg/{w}x{h}bb.jpg",
+        "textColor2": "3f291b",
+        "textColor4": "604a39",
+        "textColor1": "150d10",
+        "width": 2400
+      }
+    },
+    {
+      "title": "Never Rest",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b4/4b/00/b44b00db-4cc7-e3ba-9ff0-edd01c7ce67b/mzaf_1008689323486802479.plus.aac.p.m4a",
+      "artistName": "Great Grandpa",
+      "id": "1780627170",
+      "artwork": {
+        "height": 3000,
+        "textColor3": "a9b1c3",
+        "bgColor": "373b3e",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/84/59/0e/84590ebf-cec6-1187-e0a0-031e904e723f/50611.jpg/{w}x{h}bb.jpg",
+        "textColor2": "e3be9c",
+        "textColor4": "c0a489",
+        "textColor1": "c6cee4",
+        "width": 3000
+      }
+    },
+    {
+      "title": "Caterpillar",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d1/15/94/d11594de-4639-77d9-2d61-829ea7f1c673/mzaf_13259567335031425205.plus.aac.p.m4a",
+      "artistName": "Florence Road",
+      "id": "1804907845",
+      "artwork": {
+        "height": 4000,
+        "textColor3": "c8ced0",
+        "bgColor": "101c18",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/06/fa/f0/06faf041-8e4a-27de-4add-ec9166cef89c/5021732744104.jpg/{w}x{h}bb.jpg",
+        "textColor2": "cad164",
+        "textColor4": "a5ad55",
+        "textColor1": "f6fbfe",
+        "width": 4000
+      }
+    },
+    {
+      "title": "Stick Season",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/a5/7d/e2/a57de2d8-b038-71ac-4a90-d22d83078f3e/mzaf_17218501305753547507.plus.aac.p.m4a",
+      "artistName": "Noah Kahan",
+      "id": "1689825330",
+      "artwork": {
+        "height": 4000,
+        "textColor3": "c0b6b1",
+        "bgColor": "302d27",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e4/75/f3/e475f31a-ade1-50bf-e983-1467aaf62c46/23UMGIM59938.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor2": "d6c9c1",
+        "textColor4": "b5aaa2",
+        "textColor1": "e4d8d3",
+        "width": 4000
+      }
+    },
+    {
+      "title": "Bloom (Bonus Track)",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/11/40/d91140a8-e2e6-6da3-7c09-e3c120dca621/mzaf_764141249759358947.plus.aac.p.m4a",
+      "artistName": "The Paper Kites",
+      "id": "609187708",
+      "artwork": {
+        "height": 1500,
+        "textColor3": "d5b969",
+        "bgColor": "584932",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0b/a9/d7/0ba9d7c7-2e68-dc9b-cde4-d142e8ce86b1/067003806756.png/{w}x{h}bb.jpg",
+        "textColor2": "f3ce9b",
+        "textColor4": "d4b486",
+        "textColor1": "f4d677",
+        "width": 1500
+      }
+    },
+    {
+      "title": "Season of the Witch",
+      "artwork": {
+        "textColor4": "e1cbb5",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/01/53/80/01538047-21c8-de11-1905-bcbcb42a9a82/mzi.kgvyvvxj.jpg/{w}x{h}bb.jpg",
+        "height": 600,
+        "textColor2": "fde6ca",
+        "width": 600,
+        "textColor1": "fde6ca",
+        "bgColor": "735d62",
+        "textColor3": "e1cbb5"
+      },
+      "artistName": "Donovan",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/8c/34/97/8c3497ac-a2e4-3fd0-0134-cd589afa50fc/mzaf_9610603533253571809.plus.aac.p.m4a",
+      "id": "197974180"
+    },
+    {
+      "title": "I Don't Live Here Anymore",
+      "artwork": {
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d0/bb/db/d0bbdb88-33f5-1ead-5d18-a21985135ede/075679781666.jpg/{w}x{h}bb.jpg",
+        "width": 1425,
+        "textColor3": "373539",
+        "height": 1425,
+        "bgColor": "eaebf0",
+        "textColor4": "374872",
+        "textColor2": "0b1f53",
+        "textColor1": "0b080b"
+      },
+      "artistName": "The War on Drugs",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/40/d7/88/40d788fa-daa4-de97-10ac-3634bb3c0b1f/mzaf_2995367192768316540.plus.aac.p.m4a",
+      "id": "1576852093"
+    },
+    {
+      "title": "Heads Will Roll",
+      "id": "1440771850",
+      "artwork": {
+        "textColor4": "413f3c",
+        "width": 1500,
+        "height": 1500,
+        "textColor1": "15100b",
+        "bgColor": "eff2f7",
+        "textColor2": "16120e",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/97/1f/5c/971f5c92-2def-b4cb-a76e-bc582a396ce3/09UMGIM02469.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor3": "413d3a"
+      },
+      "artistName": "Yeah Yeah Yeahs",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/0f/31/02/0f310255-a3a5-9fea-1c2a-78936bbef458/mzaf_14976316663111073112.plus.aac.p.m4a"
+    },
+    {
+      "title": "Light On",
+      "id": "1437448494",
+      "artwork": {
+        "textColor4": "cecbce",
+        "textColor1": "faf7f8",
+        "width": 3000,
+        "textColor2": "f8e7e2",
+        "bgColor": "255b7f",
+        "height": 3000,
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/f1/70/a6/f170a6b2-db46-be82-70b4-fcc5b5065929/18UMGIM49598.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor3": "cfd8e0"
+      },
+      "artistName": "Maggie Rogers",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/8b/ac/ea/8bacea22-2b83-9f35-3b91-b459567a5704/mzaf_10154923013392512074.plus.aac.p.m4a"
+    },
+    {
+      "title": "Doing Fine",
+      "id": "1644992550",
+      "artwork": {
+        "textColor4": "e17d96",
+        "textColor1": "ffd602",
+        "height": 3000,
+        "width": 3000,
+        "bgColor": "6e5052",
+        "textColor2": "ff89a7",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/25/a2/e1/25a2e1c0-bf6a-6df6-640c-57b2f879c616/22UMGIM98334.rgb.jpg/{w}x{h}bb.jpg",
+        "textColor3": "e1bb12"
+      },
+      "artistName": "Eliza Mclamb",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/98/9c/dd/989cddfc-efd2-b8c5-46b2-680d4838c8e5/mzaf_11370141372110297481.plus.aac.p.m4a"
+    },
+    {
+      "title": "Flightless Bird, American Mouth",
+      "id": "669617572",
+      "artwork": {
+        "textColor4": "5d3e25",
+        "width": 1425,
+        "height": 1425,
+        "textColor1": "09080d",
+        "textColor2": "371c29",
+        "bgColor": "f7c318",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/05/00/ab/0500abe0-af92-181d-a1cc-69892cc98d7b/IronAndWine_TheShepherdsDog_1425px.jpg/{w}x{h}bb.jpg",
+        "textColor3": "382d0f"
+      },
+      "artistName": "Iron & Wine",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/7a/64/0a/7a640ae3-c849-581b-25b8-6bdd0982f189/mzaf_7342965638613793165.plus.aac.p.m4a"
+    },
+    {
+      "title": "Garden Song",
+      "id": "1504699859",
+      "artwork": {
+        "textColor4": "cb1d28",
+        "width": 3000,
+        "height": 3000,
+        "textColor1": "a4c8da",
+        "bgColor": "061c2f",
+        "textColor2": "fd1d27",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/39/91/4f/39914f60-e9aa-4ae9-3962-44b0a5e5d570/656605150062.jpg/{w}x{h}bb.jpg",
+        "textColor3": "84a6b8"
+      },
+      "artistName": "Phoebe Bridgers",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/0c/0c/b3/0c0cb36f-c138-1cbd-a9e5-a204ab70ddaf/mzaf_14409905150448002307.plus.aac.p.m4a"
+    },
+    {
+      "title": "That Way",
+      "id": "1773306423",
+      "artwork": {
+        "textColor4": "b6c5cc",
+        "width": 3000,
+        "textColor1": "edf0f5",
+        "height": 3000,
+        "bgColor": "4c5b29",
+        "textColor2": "d0dff5",
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c6/aa/8b/c6aa8bd1-1100-add6-399f-e2baa372e951/436671.jpg/{w}x{h}bb.jpg",
+        "textColor3": "ccd2cc"
+      },
+      "artistName": "Children of Indigo",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/04/31/4a/04314af9-95b3-977e-7c6b-8ff6c27d5f95/mzaf_10138846222311210970.plus.aac.p.m4a"
+    },
+    {
+      "artistName": "Angus & Julia Stone",
+      "title": "Chateau",
+      "artwork": {
+        "height": 3600,
+        "bgColor": "d2e1f4",
+        "textColor3": "4c413c",
+        "width": 3600,
+        "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cf/0a/bd/cf0abd5b-2646-288b-f3b4-7c030dad0f80/067003452359.png/{w}x{h}bb.jpg",
+        "textColor2": "2c241f",
+        "textColor4": "4d4a4a",
+        "textColor1": "2a1a0e"
+      },
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0c/81/c0/0c81c0be-c81b-dedd-ceee-791a9b0b99c7/mzaf_9713941323851067665.plus.aac.p.m4a",
+      "id": "1609038394"
+    }
+  ],
+  "sharedSource": 1,
+  "description": "Fall road trip playlist lovingly crafted by Trip Tunes.",
+  "caseVersion": 7,
+  "musicKitID": null,
+  "name": "Golden Hour Drive"
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Road-Trip Mixtapes — Gift Tapes | Trip Tunes</title>
+  <meta name="description" content="Free, hand-picked road-trip mixtapes from Trip Tunes — summer, fall, spring break, and the all-time classics. Preview every track, then open the playlist in the app." />
+  <link rel="canonical" href="https://triptunes.xyz/tapes/" />
+  <link rel="icon" href="../assets/app/app-icon.png" />
+  <meta property="og:title" content="Free Road-Trip Mixtapes — Trip Tunes" />
+  <meta property="og:description" content="Hand-picked road-trip mixtapes you can preview here and open in Trip Tunes." />
+  <meta property="og:image" content="https://triptunes.xyz/assets/app/app-icon.png" />
+  <meta property="og:type" content="website" />
+  <style>
+    @font-face { font-family:"Delicious Handrawn"; src:url("../assets/fonts/DeliciousHandrawn-Regular.ttf") format("truetype"); font-display:swap; }
+    :root { --coral:#FA8E85; --rust:#C9462F; --cream:#F6F1E4; --paper:#FBF7EC; --navy:#011E2D; --gold:#F4C20D; --ink:#2c2620; --muted:#7a6c5f; --line:#e2d8c4; --hand:"Delicious Handrawn","Marker Felt",cursive; --mono:"Courier New",monospace; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.6;
+      background: radial-gradient(circle at 15% 8%, rgba(250,142,133,.18), transparent 42%),
+                  radial-gradient(circle at 85% 6%, rgba(244,194,13,.16), transparent 40%),
+                  repeating-linear-gradient(0deg, transparent 0 33px, rgba(58,42,34,.045) 33px 34px), var(--cream); }
+    a { color:var(--rust); }
+    .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+    .ph { display:flex; align-items:center; gap:20px; padding:30px 0 8px; }
+    .ph .iconlink { flex:none; line-height:0; border-radius:17px; transition:transform .15s ease; }
+    .ph .iconlink:hover { transform:translateY(-2px); }
+    .ph .iconlink img { width:78px; height:78px; border-radius:17px; box-shadow:0 6px 16px rgba(1,30,45,.2); }
+    .ph .titles { min-width:0; }
+    .kicker { font-family:var(--mono); text-transform:uppercase; letter-spacing:2px; font-size:.74rem; color:var(--rust); }
+    .ph h1 { font-family:var(--hand); font-size:3.2rem; color:var(--navy); line-height:1.02; margin:4px 0 0; text-shadow:2px 2px 0 var(--coral); }
+    .lead { max-width:56ch; margin:12px 0 0; }
+    .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:26px; padding:28px 0 10px; }
+    .tape-card { display:block; text-decoration:none; color:inherit; background:var(--paper); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+      transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 8px 22px rgba(1,30,45,.10); }
+    .tape-card:hover { transform:translateY(-4px); box-shadow:0 16px 34px rgba(1,30,45,.18); }
+    .mosaic { display:grid; grid-template-columns:1fr 1fr; aspect-ratio:1; }
+    .mosaic img { width:100%; height:100%; object-fit:cover; display:block; }
+    .meta { padding:14px 16px 16px; }
+    .meta h2 { font-family:var(--hand); font-size:1.9rem; color:var(--navy); line-height:1; }
+    .meta .teaser { color:var(--ink); font-size:.9rem; margin-top:6px; }
+    .meta .sub { color:var(--muted); font-size:.8rem; margin-top:6px; }
+    footer { text-align:center; color:var(--muted); font-size:.85rem; padding:30px 24px 44px; }
+    footer a { color:var(--rust); }
+    @media (max-width:520px){ .ph h1{font-size:2.4rem;} .ph .iconlink img{width:62px;height:62px;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="ph">
+      <a class="iconlink" href="/" aria-label="Trip Tunes home"><img src="../assets/app/app-icon.png" alt="Trip Tunes"></a>
+      <div class="titles">
+        <div class="kicker">Free Gift Tapes</div>
+        <h1>Mixtapes, on the house.</h1>
+      </div>
+    </header>
+    <p class="lead">Hand-picked road-trip mixtapes from Trip Tunes. Press play right on the page, then open the whole thing in the app &mdash; every track, ready for the drive.</p>
+    <div class="gallery" id="gallery"></div>
+  </main>
+  <footer>
+    <a href="/">&larr; Back to Trip Tunes</a> &middot; <a href="/privacy/">Privacy</a><br/><br/>
+    &copy; 2026 Trip Tunes &middot; Previews &amp; artwork courtesy of iTunes / Apple Music, &copy; their respective owners.
+  </footer>
+  <script>
+    const art = (tpl,px) => tpl.replace("{w}x{h}", px+"x"+px);
+    const TAPES = [{"slug": "ultimate-road-trip", "name": "The Ultimate Road Trip Playlist", "teaser": "Windows-down singalong classics, Route 66 to Hotel California.", "count": 29, "cover": ["https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c4/e5/52/c4e55257-be51-8173-e218-73f2af1bcb52/3663729161383_cover.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/72/03/cb/7203cbef-0439-0807-2e35-644f4f7d94fb/00602498001301.rgb.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3b/49/b9/3b49b923-fb26-a60a-8b5e-f9e05ddf06dd/06UMGIM02061.rgb.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/a6/a6/53/a6a65331-d20b-53b5-766a-0c79c78f1e73/886445412307.jpg/{w}x{h}bb.jpg"]}, {"slug": "summer-road-trip", "name": "Summer Road Trip Playlist", "teaser": "Top-down cruisers for the long way to the beach.", "count": 39, "cover": ["https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/90/6b/d2/906bd238-ac29-b0e6-03fe-a1f7321befd9/190295713270.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/93/b9/af/93b9afb6-51df-e892-1724-5613ff2525f1/00606949038823.rgb.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b7/e5/23/b7e52326-6c54-d20b-8640-02dc563d0e87/24UMGIM83915.rgb.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8a/8c/13/8a8c13e0-06af-1710-7b7d-ebec65fb8361/074643893022.jpg/{w}x{h}bb.jpg"]}, {"slug": "fall-road-trip", "name": "Fall Road Trip Playlist", "teaser": "Golden-hour, scenic-route songs for cardigan weather.", "count": 37, "cover": ["https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ba/82/97/ba8297ec-91b4-b660-ce5c-7116a7bb7841/06UMGIM11030.rgb.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b1/4b/87/b14b873c-e987-b447-fbf7-9793b939f8db/886446818238.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/61/45/e8/6145e88a-6a79-fab1-ad8f-5ffdcbf44a28/18UMGIM03879.rgb.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/74/4e/93/744e930f-65d9-dffb-5d86-1360bb5a6bc5/724596932452.jpg/{w}x{h}bb.jpg"]}, {"slug": "spring-break-road-trip", "name": "Spring Break Road Trip Playlist", "teaser": "Loud, fun, sun-chasing anthems for a carful of friends.", "count": 42, "cover": ["https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6c/11/d6/6c11d681-aa3a-d59e-4c2e-f77e181026ab/190295092665.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/41/f8/38/41f8380b-9b56-d5d4-31f7-a6411c0c9aaa/886446102054.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7b/1b/1b/7b1b1b0b-7ce2-b223-f9e0-8e36abe51877/19UMGIM78325.rgb.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/28/2e/93/282e933e-90fd-90bb-b49a-6c86f2549c0a/00731452271327.rgb.jpg/{w}x{h}bb.jpg"]}, {"slug": "deep-dish-swift-2025", "name": "Unofficial Deep Dish Swift 2025 Playlist", "teaser": "The unofficial soundtrack for the Deep Dish Swift crowd.", "count": 27, "cover": ["https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/e5/94/31/e59431de-7591-58e6-c4d4-105b6373ad6a/5056494917336_1.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/07/6b/94/076b94fa-232a-d449-0d28-621f170f798a/5059460053441.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music/e8/8c/60/mzi.mbhnbrqv.jpg/{w}x{h}bb.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b5/f3/4e/b5f34e74-4d29-92a2-eb86-2017d3211af7/09UMGIM40269.rgb.jpg/{w}x{h}bb.jpg"]}];
+    const g = document.getElementById('gallery');
+    TAPES.forEach(t => {
+      const a = document.createElement('a');
+      a.className = 'tape-card'; a.href = `/tapes/${t.slug}/`;
+      a.innerHTML = `<div class="mosaic">${t.cover.map(c=>`<img loading="lazy" src="${art(c,240)}" alt="">`).join('')}</div>
+        <div class="meta"><h2>${t.name}</h2><div class="teaser">${t.teaser}</div><div class="sub">${t.count} songs &middot; preview &amp; open in the app</div></div>`;
+      g.appendChild(a);
+    });
+  </script>
+</body>
+</html>

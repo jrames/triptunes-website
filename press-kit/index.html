@@ -40,7 +40,9 @@
     /* ---- Header ---- */
     header { background: var(--paper); border-bottom: 4px solid var(--gold); }
     .ph { display: flex; align-items: center; gap: 22px; padding: 30px 24px; max-width: 860px; margin: 0 auto; flex-wrap: wrap; }
-    .ph img.icon { width: 96px; height: 96px; border-radius: 21px; box-shadow: 0 6px 16px rgba(1,30,45,.2); }
+    .ph .iconlink { flex: none; line-height: 0; border-radius: 17px; transition: transform .15s ease; }
+    .ph .iconlink:hover { transform: translateY(-2px); }
+    .ph img.icon { width: 78px; height: 78px; border-radius: 17px; box-shadow: 0 6px 16px rgba(1,30,45,.2); display: block; }
     .ph .titles { flex: 1; min-width: 240px; }
     .kicker { font-family: -apple-system, sans-serif; text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; color: var(--rust); font-weight: 700; }
     .ph h1 { font-family: var(--hand); font-size: 3rem; color: var(--navy); line-height: 1; margin: 2px 0; }
@@ -117,7 +119,7 @@
 
   <header>
     <div class="ph">
-      <img class="icon" src="../assets/app/app-icon.png" alt="Trip Tunes app icon" />
+      <a href="/" class="iconlink" aria-label="Trip Tunes home"><img class="icon" src="../assets/app/app-icon.png" alt="Trip Tunes app icon" /></a>
       <div class="titles">
         <div class="kicker">Press Kit</div>
         <h1>Trip Tunes</h1>

@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "ultimate-road-trip",
+    "key": "p_TRIP-TUNES-30-PLAYLIST",
+    "title": "The Ultimate Road Trip Playlist — Singalong Classics | Trip Tunes",
+    "h1": "The Ultimate Road Trip Playlist",
+    "kicker": "Gift Tape · Road Trip",
+    "teaser": "Windows-down singalong classics, Route 66 to Hotel California.",
+    "meta": "A hand-picked road-trip mixtape of windows-down singalong classics — Route 66 to Hotel California. Preview every track, then open the whole playlist in Trip Tunes.",
+    "blurb": [
+      "Some songs just <em>belong</em> on the open road — the ones the whole car knows by the second chorus. This is that tape: a windows-down, foot-on-the-dash run through the road-trip canon, from Chuck Berry pointing the way down Route 66 to the Eagles telling you to take it easy.",
+      "It leans classic on purpose — singalongs that work whether you're chasing a coastline or just the next exit. Press play on any track for a 30-second taste, then open the whole thing in Trip Tunes for the full, uninterrupted drive."
+    ]
+  },
+  {
+    "slug": "summer-road-trip",
+    "key": "p_TRIP-TUNES-SUMMER-PLAYLIST",
+    "title": "Summer Road Trip Playlist — Top-Down Cruisers | Trip Tunes",
+    "h1": "Summer Road Trip Playlist",
+    "kicker": "Gift Tape · Summer",
+    "teaser": "Top-down cruisers for the long way to the beach.",
+    "meta": "A free summer road-trip playlist — bright, loud, top-down cruisers for the season of the great American drive. Preview every track, then open it in Trip Tunes.",
+    "blurb": [
+      "Windows down, sun on the dash, nowhere to be until sundown. This is the summer tape — bright, loud, and built for the long way to the beach.",
+      "Top-down cruisers and warm-night anthems for the season of the great American drive. Hit play on any track, then open the full mix in Trip Tunes and point the car at the horizon."
+    ]
+  },
+  {
+    "slug": "fall-road-trip",
+    "key": "p_TRIP-TUNES-FALL-PLAYLIST",
+    "title": "Fall Road Trip Playlist — Golden Hour Drive | Trip Tunes",
+    "h1": "Fall Road Trip Playlist",
+    "kicker": "Gift Tape · Fall",
+    "teaser": "Golden-hour, scenic-route songs for cardigan weather.",
+    "meta": "A free fall road-trip playlist — mellow, nostalgic, golden-hour songs for the scenic route home. Preview every track, then open it in Trip Tunes.",
+    "blurb": [
+      "Crisp air, turning leaves, and that low golden light through the windshield. The fall tape is the scenic-route mix — a little mellower, a little nostalgic, made for taking the long way home.",
+      "Songs for cardigan weather and coffee in the cupholder, when the drive itself is the point. Preview any track, then open Golden Hour Drive in Trip Tunes."
+    ]
+  },
+  {
+    "slug": "spring-break-road-trip",
+    "key": "p_TRIP-TUNES-SPRING-BREAK-PLAYLIST",
+    "title": "Spring Break Road Trip Playlist — Sun-Chasing Anthems | Trip Tunes",
+    "h1": "Spring Break Road Trip Playlist",
+    "kicker": "Gift Tape · Spring Break",
+    "teaser": "Loud, fun, sun-chasing anthems for a carful of friends.",
+    "meta": "A free spring break road-trip playlist — loud, fun, sun-chasing anthems for a carful of friends. Preview every track, then open it in Trip Tunes.",
+    "blurb": [
+      "Pile in, point the car at warmer weather, and turn it up. The spring break tape is loud, fun, and a little reckless — exactly like the trip.",
+      "Sing-at-the-top-of-your-lungs anthems for a carful of friends chasing the first real sun of the year. Preview below, then open the whole thing in Trip Tunes."
+    ]
+  },
+  {
+    "slug": "deep-dish-swift-2025",
+    "key": "p_DEEP_DISH_SWIFT_2025",
+    "title": "Unofficial Deep Dish Swift 2025 Playlist | Trip Tunes",
+    "h1": "Unofficial Deep Dish Swift 2025 Playlist",
+    "kicker": "Gift Tape · Deep Dish Swift",
+    "teaser": "The unofficial soundtrack for the Deep Dish Swift crowd.",
+    "meta": "An unofficial playlist for Deep Dish Swift 2025 — made with Trip Tunes, the road-trip mixtape app. Preview every track, then open it in the app.",
+    "blurb": [
+      "A little wink for the folks heading to Deep Dish Swift — the unofficial soundtrack for the trip to Chicago and the late-night hallway-track conversations.",
+      "Made with Trip Tunes (an iOS app, naturally). Preview any track below, then open the full set in the app."
+    ]
+  }
+]
