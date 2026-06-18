@@ -104,8 +104,8 @@ PAGE = r"""<!DOCTYPE html>
     <div class="blurb">@@BLURB@@</div>
     <div class="stat" id="stat"></div>
     <div class="cta-row">
-      <a class="btn-open" href="@@OPEN_URL@@">&#9654; Open in Trip Tunes</a>
-      <a class="btn-store" href="@@APP_STORE@@">Don't have it? Get Trip Tunes &rarr;</a>
+      <a class="btn-open" data-goatcounter-click="tape-open-@@SLUG@@" href="@@OPEN_URL@@">&#9654; Open in Trip Tunes</a>
+      <a class="btn-store" data-goatcounter-click="tape-store-@@SLUG@@" href="@@APP_STORE@@">Don't have it? Get Trip Tunes &rarr;</a>
     </div>
     <ol class="tracks" id="tracks"></ol>
     <p class="attribution">Song previews are streamed and provided courtesy of iTunes / Apple Music &mdash; tap any track to open it on Apple Music. Album artwork belongs to the respective rights holders. Trip Tunes isn't affiliated with Apple.</p>
@@ -116,6 +116,7 @@ PAGE = r"""<!DOCTYPE html>
   </footer>
   <script>
     const SONGS = @@SONGS@@;
+    const gc = name => { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true }); };
     const art = (tpl, px) => tpl.replace("{w}x{h}", px + "x" + px);
     const appleMusic = id => "https://music.apple.com/us/song/" + id;
     const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -137,10 +138,16 @@ PAGE = r"""<!DOCTYPE html>
         const i = +btn.dataset.i;
         if (playingBtn === btn) { stop(); return; }
         stop(); audio.src = SONGS[i].p; audio.play().catch(()=>{});
+        gc("tape-play-@@SLUG@@");
         playingBtn = btn; btn.classList.add('playing'); btn.textContent='❚❚';
       };
     });
   </script>
+  <!-- GoatCounter — privacy-friendly analytics: counts pageviews + referrers
+       automatically, plus tagged clicks (tape-open-*, tape-store-*) and the
+       tape-play-* event fired on preview playback. -->
+  <script data-goatcounter="https://triptunes.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 """
@@ -219,6 +226,9 @@ HUB = r"""<!DOCTYPE html>
       g.appendChild(a);
     });
   </script>
+  <!-- GoatCounter — privacy-friendly analytics: counts pageviews + referrers. -->
+  <script data-goatcounter="https://triptunes.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 """
