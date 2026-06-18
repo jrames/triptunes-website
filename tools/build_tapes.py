@@ -66,7 +66,7 @@ PAGE = r"""<!DOCTYPE html>
     .ph .titles { min-width:0; }
     .kicker { font-family:var(--mono); text-transform:uppercase; letter-spacing:2px; font-size:.74rem; color:var(--rust); }
     .ph h1 { font-family:var(--hand); font-size:3rem; color:var(--navy); line-height:1.02; margin:4px 0 0; text-shadow:2px 2px 0 var(--coral); }
-    .blurb { font-size:1.08rem; max-width:62ch; }
+    .blurb { font-size:1.08rem; }
     .blurb p { margin:10px 0; }
     .stat { color:var(--muted); font-size:.9rem; margin-top:12px; }
     .cta-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:20px 0 6px; }
