@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suggest a Trip — New in Trip Tunes 2.0</title>
+  <meta name="description" content="Suggest a Trip, new in Trip Tunes 2.0 — one tap suggests a nearby destination, trip type, and vibe, then builds a custom Apple Music soundtrack tuned to the local music along your route. Generated privately on-device with Apple's Foundation Models. Launching July 2026." />
+  <link rel="canonical" href="https://triptunes.xyz/suggest-a-trip/" />
+  <link rel="icon" href="../assets/app/app-icon.png" />
+  <meta property="og:title" content="Suggest a Trip — New in Trip Tunes 2.0" />
+  <meta property="og:description" content="One tap suggests a destination, trip type, and vibe — then builds an Apple Music soundtrack tuned to the local music along your route. Private, on-device, powered by Apple's Foundation Models." />
+  <meta property="og:image" content="https://triptunes.xyz/assets/app/app-icon.png" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    @font-face {
+      font-family: "Delicious Handrawn";
+      src: url("../assets/fonts/DeliciousHandrawn-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+    :root {
+      --coral: #FA8E85; --rust: #C9462F; --cream: #F6F1E4; --paper: #FBF7EC;
+      --navy: #011E2D; --gold: #F4C20D; --ink: #2c2620; --muted: #7a6c5f; --line: #e2d8c4;
+      --hand: "Delicious Handrawn", "Marker Felt", cursive;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--ink); background: var(--cream); line-height: 1.6; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--rust); }
+
+    /* ---- App Store badge (matches the rest of the site) ---- */
+    .appstore { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: var(--navy); color: #fff; padding: 11px 18px; border-radius: 10px; }
+    .appstore svg { width: 20px; height: 20px; fill: #fff; }
+    .appstore small { display: block; font-size: .6rem; line-height: 1; opacity: .85; }
+    .appstore strong { display: block; font-size: 1rem; line-height: 1.15; }
+
+    /* ---- Header (unified secondary-page header) ---- */
+    header { background: var(--paper); border-bottom: 4px solid var(--gold); }
+    .ph { display: flex; align-items: center; gap: 22px; padding: 26px 24px; max-width: 920px; margin: 0 auto; flex-wrap: wrap; }
+    .ph .iconlink { flex: none; line-height: 0; border-radius: 17px; transition: transform .15s ease; }
+    .ph .iconlink:hover { transform: translateY(-2px); }
+    .ph img.icon { width: 70px; height: 70px; border-radius: 16px; box-shadow: 0 6px 16px rgba(1,30,45,.2); display: block; }
+    .ph .titles { flex: 1; min-width: 220px; }
+    .kicker { font-family: -apple-system, sans-serif; text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; color: var(--rust); font-weight: 700; }
+    .ph h1 { font-family: var(--hand); font-size: 2.6rem; color: var(--navy); line-height: 1; margin: 2px 0; }
+
+    /* ---- Hero ---- */
+    .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; padding: 52px 0 44px; }
+    .hero h2 { font-family: var(--hand); font-size: 3.1rem; color: var(--navy); line-height: 1.02; }
+    .hero .hook { font-size: 1.18rem; margin: 16px 0 6px; }
+    .hero .pitch { color: var(--ink); margin: 14px 0 0; }
+    .hero .cta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 26px; }
+    .launch { color: var(--rust); font-weight: 700; font-size: .95rem; }
+    .launch span { display: block; color: var(--muted); font-weight: 400; font-size: .82rem; }
+
+    /* ---- Demo video in a CSS phone frame (bezel is real DOM, not baked pixels) ---- */
+    .demo-phone { display: block; width: 100%; max-width: 300px; margin: 0 auto; }
+    .device { background: #0c0c0e; padding: 11px; border-radius: 48px;
+      box-shadow: 0 22px 46px rgba(1,30,45,.38), inset 0 0 0 2px rgba(255,255,255,.06); }
+    /* round the video corners with a mask — Safari ignores border-radius/overflow on <video> */
+    .device video { display: block; width: 100%; height: auto; border-radius: 38px;
+      -webkit-mask-image: url(../assets/video/suggest-a-trip-screen-mask.png); mask-image: url(../assets/video/suggest-a-trip-screen-mask.png);
+      -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+
+    /* ---- Section scaffolding ---- */
+    .section { padding: 46px 0; border-top: 1px solid var(--line); }
+    .section-head { text-align: center; max-width: 620px; margin: 0 auto 38px; }
+    .section-head .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; color: var(--rust); font-weight: 700; }
+    .section-head h2 { font-family: var(--hand); font-size: 2.4rem; color: var(--navy); line-height: 1.05; margin-top: 4px; }
+    .section-head p { color: var(--muted); margin-top: 8px; }
+
+    /* ---- How it works: alternating steps ---- */
+    .steps { display: flex; flex-direction: column; gap: 46px; }
+    .step { display: flex; align-items: center; gap: 38px; }
+    .step:nth-child(even) { flex-direction: row-reverse; }
+    .step-art { flex: none; width: 240px; }
+    /* screenshots wear the same CSS phone frame as the hero video, scaled down */
+    .step-art .device { padding: 9px; border-radius: 40px; }
+    .device img { display: block; width: 100%; height: auto; border-radius: 31px; }
+    .step-body { flex: 1; }
+    .step-body h3 { display: flex; align-items: center; gap: .6rem; font-size: 1.45rem; color: var(--navy); margin: 0 0 8px; }
+    .step-num { flex: none; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+      background: var(--coral); color: var(--navy); font-family: -apple-system, sans-serif; font-size: .92rem; font-weight: 800; }
+    .step-body p { font-size: 1.05rem; }
+
+    /* ---- Foundation Models highlight ---- */
+    .fm { background: var(--navy); color: var(--cream); border-radius: 16px; padding: 38px 36px; text-align: center; max-width: 760px; margin: 0 auto; }
+    .fm .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); font-weight: 700; }
+    .fm h2 { font-family: var(--hand); color: #fff; font-size: 2.2rem; margin: 8px 0 12px; line-height: 1.05; }
+    .fm p { opacity: .94; max-width: 56ch; margin: 0 auto; }
+
+    /* ---- Route-aware playlist spotlight ---- */
+    .spotlight { display: flex; align-items: center; gap: 38px; }
+    .spotlight.reverse { flex-direction: row-reverse; }
+    .spotlight .art { flex: none; width: 240px; }
+    .spotlight .art .device { padding: 9px; border-radius: 40px; }
+    .spotlight .body { flex: 1; }
+    .spotlight .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; color: var(--rust); font-weight: 700; }
+    .spotlight h2 { font-family: var(--hand); font-size: 2.2rem; color: var(--navy); line-height: 1.05; margin: 4px 0 10px; }
+    .spotlight .body p { font-size: 1.05rem; }
+    .spotlight .body p + p { margin-top: 10px; }
+
+    /* ---- Built-with Apple tech ---- */
+    .builtwith { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin: 24px auto 0; color: var(--muted); font-size: .85rem; }
+    .builtwith .pill { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; color: var(--navy); font-weight: 600; }
+
+    /* ---- Closing CTA ---- */
+    .closing { text-align: center; }
+    .closing h2 { font-family: var(--hand); font-size: 2.4rem; color: var(--navy); line-height: 1.05; }
+    .closing p { color: var(--muted); margin: 8px 0 22px; }
+
+    footer { border-top: 1px solid var(--line); padding: 24px; text-align: center; color: var(--muted); font-size: .85rem; }
+    footer a { color: var(--rust); }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; text-align: center; padding: 40px 0 34px; }
+      .hero .cta-row { justify-content: center; }
+      .hero .demo-phone { order: -1; max-width: 260px; }
+    }
+    @media (max-width: 640px) {
+      .ph h1 { font-size: 2.2rem; }
+      .hero h2 { font-size: 2.5rem; }
+      .step, .step:nth-child(even) { flex-direction: column; text-align: center; gap: 18px; }
+      .step-body h3 { justify-content: center; }
+      .step-art { width: 230px; }
+      .spotlight, .spotlight.reverse { flex-direction: column; text-align: center; gap: 18px; }
+      .spotlight .art { width: 230px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="ph">
+      <a href="/" class="iconlink" aria-label="Trip Tunes home"><img class="icon" src="../assets/app/app-icon.png" alt="Trip Tunes app icon" /></a>
+      <div class="titles">
+        <div class="kicker">New in Trip Tunes 2.0</div>
+        <h1>Suggest a Trip</h1>
+      </div>
+      <a class="appstore" data-goatcounter-click="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h2>Don't know where you're headed?</h2>
+        <p class="hook">Trip Tunes pitches you a trip. Like it? Tap again and it builds the soundtrack to match.</p>
+        <p class="pitch">It suggests a nearby destination, a trip type, and a travel vibe tailored to where you are &mdash; then, once you're sold, builds a custom Apple&nbsp;Music playlist for the drive. It all runs privately on your iPhone, powered by Apple's Foundation&nbsp;Models.</p>
+        <div class="cta-row">
+          <a class="appstore" data-goatcounter-click="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+          <div class="launch">Launching July&nbsp;2026<span>In time for summer road trips</span></div>
+        </div>
+      </div>
+
+      <!-- Demo video: real ~20s clip, transcoded Safari-safe (720×1566, H.264 L4.0,
+           yuv420p, color_range tv, +faststart, no audio). To replace it later, keep
+           the 720×1566 size so it reuses suggest-a-trip-screen-mask.png. -->
+      <div class="demo-phone">
+        <div class="device">
+          <video width="720" height="1566" poster="../assets/video/suggest-a-trip-poster.jpg" muted loop autoplay playsinline preload="metadata">
+            <source src="../assets/video/suggest-a-trip-demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How it works (real screenshots in CSS device frames) ===== -->
+    <section class="section">
+      <div class="section-head">
+        <div class="eyebrow">How it works</div>
+        <h2>Two taps to a trip you didn't know you wanted</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-art"><div class="device"><img src="../assets/screenshots/suggest-1.png" alt="Trip Tunes suggesting a Death Valley desert trip — destination, vibe, and trip type" /></div></div>
+          <div class="step-body">
+            <h3><span class="step-num">1</span>Tap to generate a trip</h3>
+            <p>One tap and Trip Tunes suggests a nearby <strong>destination</strong>, a <strong>trip type</strong>, and a <strong>travel vibe</strong> &mdash; tailored to where you are. No forms, no blank page to stare at.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-art"><div class="device"><img src="../assets/screenshots/suggest-2.png" alt="Trip Tunes generating the playlist — &lsquo;Considering your playlist&hellip;&rsquo;" /></div></div>
+          <div class="step-body">
+            <h3><span class="step-num">2</span>Tap to generate the playlist</h3>
+            <p>Like the idea? Tap again, and Trip Tunes builds a custom <strong>Apple&nbsp;Music</strong> soundtrack to match the trip &mdash; cued up and ready for the drive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Route-aware playlists ===== -->
+    <section class="section">
+      <div class="spotlight">
+        <div class="art"><div class="device"><img src="../assets/screenshots/suggest-3.png" alt="A finished route-aware soundtrack full of California songs for a California drive" /></div></div>
+        <div class="body">
+          <div class="eyebrow">Now smarter on every mile</div>
+          <h2>A soundtrack that follows the whole route</h2>
+          <p>This version digs deeper into your trip. Trip Tunes maps the full route, then leans the playlist toward the towns, regions, and landmarks you'll actually pass &mdash; so the songs reflect the local music all along the way, not just the place at the end.</p>
+          <p>Point it from San&nbsp;Francisco to Death&nbsp;Valley and you get California top to bottom &mdash; a richer, more local mix than before.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Apple Music export ===== -->
+    <section class="section">
+      <div class="spotlight reverse">
+        <div class="art"><div class="device"><img src="../assets/screenshots/suggest-applemusic.png" alt="The Desert Adventure Soundtrack saved as a real Apple Music playlist, credited to Trip Tunes" /></div></div>
+        <div class="body">
+          <div class="eyebrow">Save &amp; open in Apple Music</div>
+          <h2>Then it's yours in Apple Music</h2>
+          <p>One tap saves the whole soundtrack to your library as a real <strong>Apple&nbsp;Music</strong> playlist &mdash; full album artwork, ready to play, download for the dead zones, and share with whoever's riding along.</p>
+          <p>Your road-trip tape lives on in Apple&nbsp;Music long after the drive is over.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Foundation Models highlight ===== -->
+    <section class="section">
+      <div class="fm">
+        <div class="eyebrow">On-device &middot; private by design</div>
+        <h2>Powered by Apple's Foundation Models</h2>
+        <p>Your trip ideas never leave your phone. Each suggestion is generated privately, on-device, with Apple's Foundation&nbsp;Models framework &mdash; so you can discover new adventures without sending your location or personal data to any server. On supported devices, it all happens right on iPhone.</p>
+      </div>
+      <div class="builtwith">
+        <span>Built with</span>
+        <span class="pill">Foundation Models</span>
+        <span class="pill">Apple Maps</span>
+        <span class="pill">Apple Music</span>
+      </div>
+    </section>
+
+    <!-- ===== Closing CTA ===== -->
+    <section class="section closing">
+      <h2>Find your next summer drive.</h2>
+      <p>Suggest a Trip arrives in Trip Tunes 2.0 &mdash; launching July&nbsp;2026.</p>
+      <a class="appstore" data-goatcounter-click="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener" style="display:inline-flex;"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+    </section>
+
+  </main>
+
+  <footer>
+    <a href="/">Home</a> &middot; <a href="/privacy/">Privacy</a><br/><br/>
+    &copy; 2026 Trip Tunes &middot; Not affiliated with Apple. Apple Music is a trademark of Apple Inc.<br/>
+    Screenshots depict Apple&nbsp;Music; album artwork belongs to the respective rights holders.
+  </footer>
+
+  <!-- GoatCounter — privacy-friendly analytics (pageviews + tagged App Store clicks) -->
+  <script data-goatcounter="https://triptunes.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
