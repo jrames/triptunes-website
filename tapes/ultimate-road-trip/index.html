@@ -105,6 +105,20 @@
       };
     });
   </script>
+  <!-- Printed-sticker QR attribution. The QR links here with ?ref=sticker, which
+       GoatCounter records as a referrer automatically; this also fires a
+       dedicated scan-sticker-ultimate-road-trip event so scans are countable on their own.
+       Fires on load and retries until the async count.js loader is ready. -->
+  <script>
+    addEventListener('load', function () {
+      if (new URLSearchParams(location.search).get('ref') !== 'sticker') return;
+      (function fire(n) {
+        if (window.goatcounter && window.goatcounter.count)
+          window.goatcounter.count({ path: 'scan-sticker-ultimate-road-trip', title: 'Sticker scan', event: true });
+        else if (n < 50) setTimeout(function () { fire(n + 1); }, 100);
+      })(0);
+    });
+  </script>
   <!-- GoatCounter — privacy-friendly analytics: counts pageviews + referrers
        automatically, plus tagged clicks (tape-open-*, tape-store-*) and the
        tape-play-* event fired on preview playback. -->
