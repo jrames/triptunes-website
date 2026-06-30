@@ -19,6 +19,10 @@ PAYLOADS = os.path.join(ROOT, "tools", "tape-payloads")
 TAPES = json.load(open(os.path.join(ROOT, "tools", "tapes.json")))
 APP_STORE = "https://apps.apple.com/app/id6467522749"
 
+# Which tape the printed sticker QR (triptunes.xyz/featured) currently resolves
+# to. Change this to repoint every sticker already in the wild, then rebuild.
+FEATURED_SLUG = "summer-road-trip"
+
 
 def songs_for(slug):
     data = json.load(open(os.path.join(PAYLOADS, slug + ".json")))
@@ -42,8 +46,8 @@ PAGE = r"""<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@@TITLE@@</title>
-  <meta name="description" content="@@META@@" />
-  <link rel="canonical" href="https://triptunes.xyz/tapes/@@SLUG@@/" />
+  <meta name="description" content="@@META@@" />@@ROBOTS@@
+  <link rel="canonical" href="@@CANONICAL@@" />
   <link rel="icon" href="../../assets/app/app-icon.png" />
   <meta property="og:title" content="@@H1@@ — Trip Tunes" />
   <meta property="og:description" content="@@META@@" />
@@ -253,20 +257,33 @@ def write(path, text):
     open(path, "w").write(text)
 
 
-index = []
-for t in TAPES:
-    songs = songs_for(t["slug"])
-    blurb_html = "".join(f"<p>{p}</p>" for p in t["blurb"])
+def render_page(t, songs, *, slug, canonical, robots="", depth=2):
+    """Render a tape PAGE. `slug` drives the GoatCounter event names; `canonical`
+    and `robots` let the /featured mirror point search engines at the real tape
+    and stay out of the index. `depth` is how many dirs deep the page lives so the
+    ../../-relative asset refs resolve (2 = tapes/<slug>/, 1 = featured/)."""
     page = (PAGE
         .replace("@@TITLE@@", html.escape(t["title"], quote=True))
         .replace("@@META@@", html.escape(t["meta"], quote=True))
-        .replace("@@SLUG@@", t["slug"])
+        .replace("@@SLUG@@", slug)
         .replace("@@H1@@", html.escape(t["h1"]))
         .replace("@@KICKER@@", html.escape(t["kicker"]))
-        .replace("@@BLURB@@", blurb_html)
+        .replace("@@BLURB@@", "".join(f"<p>{p}</p>" for p in t["blurb"]))
         .replace("@@OPEN_URL@@", f"https://share.triptunes.xyz/p/{t['key']}")
         .replace("@@APP_STORE@@", APP_STORE)
+        .replace("@@CANONICAL@@", canonical)
+        .replace("@@ROBOTS@@", robots)
         .replace("@@SONGS@@", embed(songs)))
+    if depth == 1:  # featured/ is one dir shallower than tapes/<slug>/
+        page = page.replace("../../", "../")
+    return page
+
+
+index = []
+for t in TAPES:
+    songs = songs_for(t["slug"])
+    page = render_page(t, songs, slug=t["slug"],
+                       canonical=f"https://triptunes.xyz/tapes/{t['slug']}/")
     write(os.path.join(ROOT, "tapes", t["slug"], "index.html"), page)
     index.append({"slug": t["slug"], "name": t["h1"], "teaser": t["teaser"],
                   "count": len(songs), "cover": [s["art"] for s in songs[:4]]})
@@ -274,3 +291,16 @@ for t in TAPES:
 
 write(os.path.join(ROOT, "tapes", "index.html"), HUB.replace("@@INDEX@@", embed(index)))
 print(f"  wrote tapes/  (hub, {len(index)} tapes)")
+
+# /featured/ — stable sticker-QR landing page. The printed QR points at
+# triptunes.xyz/featured; repoint it by changing FEATURED_SLUG and rebuilding.
+# It mirrors a real tape but canonicals to it and is noindex'd to avoid dupes.
+feat = next((t for t in TAPES if t["slug"] == FEATURED_SLUG), None)
+if feat is None:
+    raise SystemExit(f"FEATURED_SLUG {FEATURED_SLUG!r} not found in tapes.json")
+feat_page = render_page(
+    feat, songs_for(FEATURED_SLUG), slug="featured",
+    canonical=f"https://triptunes.xyz/tapes/{FEATURED_SLUG}/",
+    robots='\n  <meta name="robots" content="noindex" />', depth=1)
+write(os.path.join(ROOT, "featured", "index.html"), feat_page)
+print(f"  wrote featured/  (-> {FEATURED_SLUG})")
