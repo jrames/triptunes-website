@@ -46,8 +46,7 @@ PAGE = r"""<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@@TITLE@@</title>
-  <meta name="description" content="@@META@@" />@@ROBOTS@@
-  <link rel="canonical" href="@@CANONICAL@@" />
+  <meta name="description" content="@@META@@" />@@HEAD_META@@
   <link rel="icon" href="../../assets/app/app-icon.png" />
   <meta property="og:title" content="@@H1@@ — Trip Tunes" />
   <meta property="og:description" content="@@META@@" />
@@ -257,11 +256,14 @@ def write(path, text):
     open(path, "w").write(text)
 
 
-def render_page(t, songs, *, slug, canonical, robots="", depth=2):
-    """Render a tape PAGE. `slug` drives the GoatCounter event names; `canonical`
-    and `robots` let the /featured mirror point search engines at the real tape
-    and stay out of the index. `depth` is how many dirs deep the page lives so the
-    ../../-relative asset refs resolve (2 = tapes/<slug>/, 1 = featured/)."""
+def render_page(t, songs, *, slug, head_meta, depth=2):
+    """Render a tape PAGE. `slug` drives the GoatCounter event names; `head_meta`
+    is the per-page <head> SEO line. Real tapes self-canonical; the /featured
+    mirror is noindex with NO canonical — a canonical would make GoatCounter's
+    count.js file /featured pageviews under the real tape's path (it honors
+    rel=canonical), collapsing the sticker's scan counter. `depth` is how many
+    dirs deep the page lives so the ../../-relative asset refs resolve
+    (2 = tapes/<slug>/, 1 = featured/)."""
     page = (PAGE
         .replace("@@TITLE@@", html.escape(t["title"], quote=True))
         .replace("@@META@@", html.escape(t["meta"], quote=True))
@@ -271,8 +273,7 @@ def render_page(t, songs, *, slug, canonical, robots="", depth=2):
         .replace("@@BLURB@@", "".join(f"<p>{p}</p>" for p in t["blurb"]))
         .replace("@@OPEN_URL@@", f"https://share.triptunes.xyz/p/{t['key']}")
         .replace("@@APP_STORE@@", APP_STORE)
-        .replace("@@CANONICAL@@", canonical)
-        .replace("@@ROBOTS@@", robots)
+        .replace("@@HEAD_META@@", head_meta)
         .replace("@@SONGS@@", embed(songs)))
     if depth == 1:  # featured/ is one dir shallower than tapes/<slug>/
         page = page.replace("../../", "../")
@@ -282,8 +283,9 @@ def render_page(t, songs, *, slug, canonical, robots="", depth=2):
 index = []
 for t in TAPES:
     songs = songs_for(t["slug"])
-    page = render_page(t, songs, slug=t["slug"],
-                       canonical=f"https://triptunes.xyz/tapes/{t['slug']}/")
+    page = render_page(
+        t, songs, slug=t["slug"],
+        head_meta=f'\n  <link rel="canonical" href="https://triptunes.xyz/tapes/{t["slug"]}/" />')
     write(os.path.join(ROOT, "tapes", t["slug"], "index.html"), page)
     index.append({"slug": t["slug"], "name": t["h1"], "teaser": t["teaser"],
                   "count": len(songs), "cover": [s["art"] for s in songs[:4]]})
@@ -300,7 +302,6 @@ if feat is None:
     raise SystemExit(f"FEATURED_SLUG {FEATURED_SLUG!r} not found in tapes.json")
 feat_page = render_page(
     feat, songs_for(FEATURED_SLUG), slug="featured",
-    canonical=f"https://triptunes.xyz/tapes/{FEATURED_SLUG}/",
-    robots='\n  <meta name="robots" content="noindex" />', depth=1)
+    head_meta='\n  <meta name="robots" content="noindex" />', depth=1)
 write(os.path.join(ROOT, "featured", "index.html"), feat_page)
 print(f"  wrote featured/  (-> {FEATURED_SLUG})")
