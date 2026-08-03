@@ -8,6 +8,7 @@ Inputs:
 Outputs (self-contained static HTML; the served site stays no-build):
   tapes/index.html              the hub gallery
   tapes/<slug>/index.html       one page per tape
+  sitemap.xml                   all indexable site and tape URLs
 
 To add a tape: drop its payload at tools/tape-payloads/<slug>.json, add a
 matching entry to tools/tapes.json, then run:  python3 tools/build_tapes.py
@@ -18,6 +19,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAYLOADS = os.path.join(ROOT, "tools", "tape-payloads")
 TAPES = json.load(open(os.path.join(ROOT, "tools", "tapes.json")))
 APP_STORE = "https://apps.apple.com/app/id6467522749"
+INDEXABLE_PATHS = [
+    "/",
+    "/b-sides/",
+    "/press-kit/",
+    "/privacy/",
+    "/suggest-a-trip/",
+    "/tapes/",
+]
 
 # Which tape the printed sticker QR (triptunes.xyz/featured) currently resolves
 # to. Change this to repoint every sticker already in the wild, then rebuild.
@@ -38,6 +47,40 @@ def songs_for(slug):
 
 def embed(obj):
     return json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
+
+
+def artwork_url(template, size):
+    return template.replace("{w}x{h}", f"{size}x{size}")
+
+
+def render_tracks(songs):
+    rows = []
+    for i, song in enumerate(songs):
+        title = html.escape(song["t"])
+        artist = html.escape(song["a"])
+        image = html.escape(artwork_url(song["art"], 128), quote=True)
+        apple_music = html.escape(
+            f'https://music.apple.com/us/song/{song["id"]}', quote=True)
+        rows.append(f"""      <li>
+        <span class="num">{i + 1}</span>
+        <button class="play" data-i="{i}" aria-label="Preview {html.escape(song['t'], quote=True)}">▶</button>
+        <img class="art" loading="lazy" width="52" height="52" src="{image}" alt="{html.escape(song['t'], quote=True)} album art">
+        <div class="tk"><div class="t">{title}</div><div class="a">{artist}</div></div>
+        <a class="am" href="{apple_music}" target="_blank" rel="noopener">Apple Music &#8599;</a>
+      </li>""")
+    return "\n".join(rows)
+
+
+def render_hub_card(tape):
+    slug = html.escape(tape["slug"], quote=True)
+    images = "".join(
+        f'<img loading="lazy" width="240" height="240" src="{html.escape(artwork_url(url, 240), quote=True)}" alt="">'
+        for url in tape["cover"]
+    )
+    return f"""      <a class="tape-card" href="/tapes/{slug}/">
+        <div class="mosaic">{images}</div>
+        <div class="meta"><h2>{html.escape(tape['name'])}</h2><div class="teaser">{html.escape(tape['teaser'])}</div><div class="sub">{tape['count']} songs &middot; preview &amp; open in the app</div></div>
+      </a>"""
 
 
 PAGE = r"""<!DOCTYPE html>
@@ -105,12 +148,14 @@ PAGE = r"""<!DOCTYPE html>
       </div>
     </header>
     <div class="blurb">@@BLURB@@</div>
-    <div class="stat" id="stat"></div>
+    <div class="stat">@@STAT@@</div>
     <div class="cta-row">
       <a class="btn-open" data-goatcounter-click="tape-open-@@SLUG@@" href="@@OPEN_URL@@">&#9654; Open in Trip Tunes</a>
       <a class="btn-store" data-goatcounter-click="tape-store-@@SLUG@@" href="@@APP_STORE@@">Don't have it? Get Trip Tunes &rarr;</a>
     </div>
-    <ol class="tracks" id="tracks"></ol>
+    <ol class="tracks" id="tracks">
+@@TRACKS@@
+    </ol>
     <p class="attribution">Song previews are streamed and provided courtesy of iTunes / Apple Music &mdash; tap any track to open it on Apple Music. Album artwork belongs to the respective rights holders. Trip Tunes isn't affiliated with Apple.</p>
   </div>
   <footer>
@@ -120,22 +165,10 @@ PAGE = r"""<!DOCTYPE html>
   <script>
     const SONGS = @@SONGS@@;
     const gc = name => { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true }); };
-    const art = (tpl, px) => tpl.replace("{w}x{h}", px + "x" + px);
-    const appleMusic = id => "https://music.apple.com/us/song/" + id;
-    const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    document.getElementById('stat').textContent = SONGS.length + " songs · about " + Math.round(SONGS.length*3.7) + " min";
     const tracks = document.getElementById('tracks');
     const audio = new Audio(); let playingBtn = null;
     function stop(){ audio.pause(); if(playingBtn){ playingBtn.classList.remove('playing'); playingBtn.textContent='▶'; playingBtn=null; } }
     audio.addEventListener('ended', stop);
-    tracks.innerHTML = SONGS.map((s,i)=>`
-      <li>
-        <span class="num">${i+1}</span>
-        <button class="play" data-i="${i}" aria-label="Preview ${esc(s.t)}">▶</button>
-        <img class="art" loading="lazy" src="${art(s.art,128)}" alt="${esc(s.t)} album art">
-        <div class="tk"><div class="t">${esc(s.t)}</div><div class="a">${esc(s.a)}</div></div>
-        <a class="am" href="${appleMusic(s.id)}" target="_blank" rel="noopener">Apple Music &#8599;</a>
-      </li>`).join('');
     tracks.querySelectorAll('.play').forEach(btn=>{
       btn.onclick = () => {
         const i = +btn.dataset.i;
@@ -225,24 +258,14 @@ HUB = r"""<!DOCTYPE html>
       </div>
     </header>
     <p class="lead">Hand-picked road-trip mixtapes from Trip Tunes. Press play right on the page, then open the whole thing in the app &mdash; every track, ready for the drive.</p>
-    <div class="gallery" id="gallery"></div>
+    <div class="gallery">
+@@CARDS@@
+    </div>
   </main>
   <footer>
     <a href="/">&larr; Back to Trip Tunes</a> &middot; <a href="/privacy/">Privacy</a><br/><br/>
     &copy; 2026 Trip Tunes &middot; Previews &amp; artwork courtesy of iTunes / Apple Music, &copy; their respective owners.
   </footer>
-  <script>
-    const art = (tpl,px) => tpl.replace("{w}x{h}", px+"x"+px);
-    const TAPES = @@INDEX@@;
-    const g = document.getElementById('gallery');
-    TAPES.forEach(t => {
-      const a = document.createElement('a');
-      a.className = 'tape-card'; a.href = `/tapes/${t.slug}/`;
-      a.innerHTML = `<div class="mosaic">${t.cover.map(c=>`<img loading="lazy" src="${art(c,240)}" alt="">`).join('')}</div>
-        <div class="meta"><h2>${t.name}</h2><div class="teaser">${t.teaser}</div><div class="sub">${t.count} songs &middot; preview &amp; open in the app</div></div>`;
-      g.appendChild(a);
-    });
-  </script>
   <!-- GoatCounter — privacy-friendly analytics: counts pageviews + referrers. -->
   <script data-goatcounter="https://triptunes.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
@@ -274,6 +297,8 @@ def render_page(t, songs, *, slug, head_meta, depth=2):
         .replace("@@OPEN_URL@@", f"https://share.triptunes.xyz/p/{t['key']}")
         .replace("@@APP_STORE@@", APP_STORE)
         .replace("@@HEAD_META@@", head_meta)
+        .replace("@@STAT@@", f"{len(songs)} songs · about {round(len(songs) * 3.7)} min")
+        .replace("@@TRACKS@@", render_tracks(songs))
         .replace("@@SONGS@@", embed(songs)))
     if depth == 1:  # featured/ is one dir shallower than tapes/<slug>/
         page = page.replace("../../", "../")
@@ -291,8 +316,19 @@ for t in TAPES:
                   "count": len(songs), "cover": [s["art"] for s in songs[:4]]})
     print(f"  wrote tapes/{t['slug']}/  ({len(songs)} songs)")
 
-write(os.path.join(ROOT, "tapes", "index.html"), HUB.replace("@@INDEX@@", embed(index)))
+write(os.path.join(ROOT, "tapes", "index.html"),
+      HUB.replace("@@CARDS@@", "\n".join(render_hub_card(t) for t in index)))
 print(f"  wrote tapes/  (hub, {len(index)} tapes)")
+
+sitemap_paths = INDEXABLE_PATHS + [f'/tapes/{t["slug"]}/' for t in TAPES]
+sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+sitemap += "".join(
+    f"  <url><loc>https://triptunes.xyz{path}</loc></url>\n"
+    for path in sitemap_paths
+)
+sitemap += "</urlset>\n"
+write(os.path.join(ROOT, "sitemap.xml"), sitemap)
+print(f"  wrote sitemap.xml  ({len(sitemap_paths)} URLs)")
 
 # /featured/ — stable sticker-QR landing page. The printed QR points at
 # triptunes.xyz/featured; repoint it by changing FEATURED_SLUG and rebuilding.

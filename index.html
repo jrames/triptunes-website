@@ -5,12 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trip Tunes — Mixtapes inspired by the road ahead</title>
   <meta name="description" content="Trip Tunes makes road-trip mixtapes inspired by your route, your taste, and the local music scene. Made to share. On the App Store." />
+  <link rel="canonical" href="https://triptunes.xyz/" />
   <link rel="icon" href="assets/app/app-icon.png" />
   <meta property="og:title" content="Trip Tunes — Mixtapes inspired by the road ahead" />
   <meta property="og:description" content="Road trip mixtapes inspired by your route, your taste, and the local music scene. Made to share." />
   <meta property="og:image" content="https://triptunes.xyz/assets/app/app-icon.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Trip Tunes",
+    "url": "https://triptunes.xyz/",
+    "downloadUrl": "https://apps.apple.com/app/id6467522749",
+    "operatingSystem": "iOS 16.0 or later",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "review": {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "walkernyranger" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Trip Tunes does a phenomenal job of finding the right tunes with just a few taps."
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
   <style>
@@ -184,6 +207,20 @@
       -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
       -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
 
+    /* ===== Crawlable gift-tape shelf ===== */
+    .mix-shelf { text-align: center; }
+    .mix-shelf .intro { max-width: 620px; margin: 8px auto 30px; color: var(--muted); }
+    .mix-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 900px; margin: 0 auto 28px; }
+    .mix-card { display: flex; min-height: 165px; padding: 24px; border: 3px solid var(--navy); border-radius: 8px; text-align: left; text-decoration: none;
+      color: var(--navy); background: var(--paper); box-shadow: 6px 7px 0 rgba(1,30,45,.18); transition: transform .15s, box-shadow .15s; flex-direction: column; }
+    .mix-card:nth-child(2) { background: var(--coral); transform: rotate(1deg); }
+    .mix-card:nth-child(3) { background: var(--gold); transform: rotate(-1deg); }
+    .mix-card:hover { transform: translateY(-4px); box-shadow: 9px 12px 0 rgba(1,30,45,.2); }
+    .mix-card .label { font-family: var(--mono); color: var(--rust); letter-spacing: 1px; text-transform: uppercase; }
+    .mix-card h3 { font-family: var(--hand); font-size: 2rem; line-height: 1; margin: 8px 0; }
+    .mix-card p { font-size: .94rem; line-height: 1.4; margin-top: auto; }
+    .mix-all { font-family: var(--mono); font-size: 1.2rem; letter-spacing: 1px; font-weight: 700; }
+
     /* ===== Gift sticky note ===== */
     .gift { background: var(--gold); border: 3px solid var(--ink); border-radius: 4px; padding: 40px; max-width: 740px; margin: 0 auto; transform: rotate(-1.2deg); box-shadow: 8px 10px 0 rgba(0,0,0,.18); }
     .gift h3 { font-family: var(--hand); font-size: 2.4rem; color: var(--navy); }
@@ -241,6 +278,7 @@
       .hero h1 { font-size: min(3.2rem, 9.5vw); } /* scale headline down on narrow phones so "by the road ahead." fits */
       .hero .lede, .hero .hero-prop { margin-left: auto; margin-right: auto; }
       .hero-cta { justify-content: center; } .phone-peek { display: none; }
+      .mix-grid { grid-template-columns: 1fr; max-width: 520px; }
     }
   </style>
 </head>
@@ -427,6 +465,30 @@
     </div>
     <a href="press-kit/" data-goatcounter-click="press-kit">&gt;&gt; SEE THE FULL PRESS KIT</a>
   </div>
+
+  <!-- FREE PLAYLISTS — useful, crawlable entry points into the gift-tape gallery -->
+  <section class="wrap mix-shelf" id="gift-tapes">
+    <h2 class="section-title">Free road-trip playlists</h2>
+    <p class="intro">Preview every song right here, then open the full mixtape in Trip Tunes when you’re ready to hit the road.</p>
+    <div class="mix-grid">
+      <a class="mix-card" href="/tapes/ultimate-road-trip/" data-goatcounter-click="home-tape-ultimate-road-trip">
+        <span class="label">The classics</span>
+        <h3>The Ultimate Road Trip Playlist</h3>
+        <p>Windows-down singalongs, from Route 66 to Hotel California.</p>
+      </a>
+      <a class="mix-card" href="/tapes/summer-road-trip/" data-goatcounter-click="home-tape-summer-road-trip">
+        <span class="label">Summer drive</span>
+        <h3>Summer Road Trip Playlist</h3>
+        <p>Top-down cruisers for taking the long way to the beach.</p>
+      </a>
+      <a class="mix-card" href="/tapes/fall-road-trip/" data-goatcounter-click="home-tape-fall-road-trip">
+        <span class="label">Scenic route</span>
+        <h3>Fall Road Trip Playlist</h3>
+        <p>Golden-hour songs for cardigan weather and the long way home.</p>
+      </a>
+    </div>
+    <a class="mix-all" href="/tapes/" data-goatcounter-click="home-tapes-all">Browse all free gift tapes &rarr;</a>
+  </section>
 
   <!-- GIFT -->
   <section class="wrap">

@@ -86,7 +86,8 @@ surface that links back into the app. **Generated**, not hand-written:
   the page's "Open in Trip Tunes" button links to `https://share.triptunes.xyz/p/<key>`.
 - `tools/build_tapes.py` — reads both and writes `tapes/index.html` (hub) +
   `tapes/<slug>/index.html` (one per tape), with each tracklist/artwork/30s
-  preview embedded as a **static snapshot** (re-run if a tape's KV value changes).
+  preview embedded as a **static snapshot**, and refreshes `sitemap.xml` (re-run
+  if a tape's KV value changes).
 
 **Add a tape:** drop the payload at `tools/tape-payloads/<slug>.json`, add a
 matching entry to `tools/tapes.json`, then `python3 tools/build_tapes.py`. The
@@ -98,8 +99,8 @@ promotional-content terms — every track links to Apple Music, previews are
 iTunes / Apple Music" attribution line, and the social-card image is the app
 icon, **not** album art.
 
-`/tapes/` is currently **not linked** from the main nav — add the link when
-ready to surface it publicly.
+`/tapes/` is linked from the main nav, footer, and the homepage's free-playlists
+section. Keep those entry points intact as new tapes are generated.
 
 ## Working style
 

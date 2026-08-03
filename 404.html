@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Tape Not Found | Trip Tunes</title>
+  <link rel="icon" href="/assets/app/app-icon.png" />
+  <style>
+    @font-face { font-family:"Delicious Handrawn"; src:url("/assets/fonts/DeliciousHandrawn-Regular.ttf") format("truetype"); font-display:swap; }
+    :root { --coral:#FA8E85; --cream:#F6F1E4; --navy:#011E2D; --gold:#F4C20D; --rust:#C9462F; --ink:#3A2A22; }
+    * { box-sizing:border-box; }
+    body { min-height:100vh; margin:0; display:grid; place-items:center; padding:24px; color:var(--ink); text-align:center;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+      background:repeating-linear-gradient(0deg,transparent 0 33px,rgba(58,42,34,.045) 33px 34px),var(--cream); }
+    main { width:min(560px,100%); padding:48px 28px; background:var(--gold); border:3px solid var(--navy); border-radius:5px;
+      box-shadow:10px 12px 0 rgba(1,30,45,.18); transform:rotate(-1deg); }
+    img { width:82px; height:82px; border-radius:18px; box-shadow:0 7px 18px rgba(1,30,45,.22); }
+    h1 { margin:18px 0 8px; color:var(--navy); font:3.4rem/1 "Delicious Handrawn","Marker Felt",cursive; text-shadow:2px 2px 0 var(--coral); }
+    p { margin:0 auto 24px; max-width:38ch; font-size:1.05rem; }
+    nav { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+    a { padding:11px 17px; border-radius:9px; color:#fff; background:var(--navy); font-weight:700; text-decoration:none; }
+    a + a { color:var(--navy); background:var(--coral); }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/assets/app/app-icon.png" alt="Trip Tunes" />
+    <h1>This tape got lost.</h1>
+    <p>The road took an unexpected turn. Head home or pick out a free mixtape for the drive back.</p>
+    <nav aria-label="Not found">
+      <a href="/">Trip Tunes home</a>
+      <a href="/tapes/">Browse gift tapes</a>
+    </nav>
+  </main>
+</body>
+</html>
