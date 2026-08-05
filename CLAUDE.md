@@ -91,7 +91,7 @@ surface that links back into the app. **Generated**, not hand-written:
 
 **Add a tape:** drop the payload at `tools/tape-payloads/<slug>.json`, add a
 matching entry to `tools/tapes.json`, then `python3 tools/build_tapes.py`. The
-`/create_mix` skill automates all of that + render-check + commit/push.
+`/create-mix` skill automates all of that + render-check + commit/push.
 
 **Apple ToS (keep intact):** previews + artwork run under Apple's
 promotional-content terms — every track links to Apple Music, previews are
