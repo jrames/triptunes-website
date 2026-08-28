@@ -93,6 +93,13 @@ surface that links back into the app. **Generated**, not hand-written:
 matching entry to `tools/tapes.json`, then `python3 tools/build_tapes.py`. The
 `/create-mix` skill automates all of that + render-check + commit/push.
 
+For curated tapes, use the app’s `giftgen-dev-tool` branch and
+`TripTunes-GiftGen` simulator scheme to produce the MusicKit-resolved payload.
+The share upload already stores the payload in the share service’s Cloudflare
+KV and returns the key. Remote Config uses
+`https://share.triptunes.xyz/playlist/<key>`; website buttons use
+`https://share.triptunes.xyz/p/<key>`.
+
 **Apple ToS (keep intact):** previews + artwork run under Apple's
 promotional-content terms — every track links to Apple Music, previews are
 **streamed only** (never downloaded/cached/rehosted), there's a "courtesy of
