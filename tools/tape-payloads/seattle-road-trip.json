@@ -1,0 +1,624 @@
+{
+  "artistLocations" : {
+    "aliceinchains" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "bingcrosby" : {
+      "place" : "Tacoma",
+      "relationship" : "born",
+      "tier" : "onRoute"
+    },
+    "bluescholars" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "dalecrover" : {
+      "place" : "Aberdeen",
+      "relationship" : "born",
+      "tier" : "onRoute"
+    },
+    "deathcabforcutie" : {
+      "place" : "Bellingham",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "fleetfoxes" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "greenriver" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "harveydanger" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "heart" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "jeremyblake" : {
+      "place" : "Seattle",
+      "relationship" : "based",
+      "tier" : "onRoute"
+    },
+    "jimihendrix" : {
+      "place" : "Seattle",
+      "relationship" : "born",
+      "tier" : "onRoute"
+    },
+    "kylydian" : {
+      "place" : "Renton",
+      "relationship" : "based",
+      "tier" : "onRoute"
+    },
+    "mudhoney" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "nirvana" : {
+      "place" : "Aberdeen",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "oddlogic" : {
+      "place" : "Tacoma",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "pearljam" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "scntfc" : {
+      "place" : "Seattle",
+      "relationship" : "born",
+      "tier" : "onRoute"
+    },
+    "shabazzpalaces" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "sirmixalot" : {
+      "place" : "Seattle",
+      "relationship" : "born",
+      "tier" : "onRoute"
+    },
+    "soundgarden" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "sunnydayrealestate" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "tad" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "thedip" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "theheadandtheheart" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "thepresidentsoftheunitedstatesofamerica" : {
+      "place" : "Seattle",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    },
+    "thesonics" : {
+      "place" : "Bremerton",
+      "relationship" : "formed",
+      "tier" : "onRoute"
+    }
+  },
+  "artistLocationsVersion" : 2,
+  "basicSongs" : [
+    {
+      "artistName" : "The Sonics",
+      "artwork" : {
+        "bgColor" : "1e1516",
+        "height" : 1600,
+        "textColor1" : "dce7eb",
+        "textColor2" : "ccd2d2",
+        "textColor3" : "b6bdc0",
+        "textColor4" : "a9acad",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music\/v4\/ec\/63\/b1\/ec63b114-a8cc-286f-f92a-4088a5f9b22f\/859708739411_cover.tif\/{w}x{h}bb.jpg",
+        "width" : 1600
+      },
+      "id" : "553598778",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview125\/v4\/b3\/e0\/35\/b3e0355c-a741-3fc3-f0f4-84d54236df22\/mzaf_5319927000125297990.plus.aac.p.m4a",
+      "title" : "Have Love Will Travel"
+    },
+    {
+      "artistName" : "Green River",
+      "artwork" : {
+        "bgColor" : "785a52",
+        "height" : 3000,
+        "textColor1" : "fcefd8",
+        "textColor2" : "fce8c3",
+        "textColor3" : "e2d1bd",
+        "textColor4" : "e1cbac",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music124\/v4\/a9\/f6\/24\/a9f624a0-fe11-7b2c-ac50-f9d33069b85a\/GreenRiver_RehabDoll_Cover_3000x3000.jpg\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "1439516225",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview115\/v4\/81\/06\/28\/810628b2-615d-677a-40e6-307162a6cc25\/mzaf_13865375129241343707.plus.aac.p.m4a",
+      "title" : "Swallow My Pride"
+    },
+    {
+      "artistName" : "The Gits",
+      "artwork" : {
+        "bgColor" : "dbdbdb",
+        "height" : 3600,
+        "textColor1" : "1b1b1b",
+        "textColor2" : "343434",
+        "textColor3" : "424242",
+        "textColor4" : "555555",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music221\/v4\/6f\/07\/22\/6f0722b4-6c5c-a620-eee2-4babc73b3b40\/098787164862.png\/{w}x{h}bb.jpg",
+        "width" : 3600
+      },
+      "id" : "1775966871",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview211\/v4\/d9\/5f\/71\/d95f7175-f76e-5040-b99d-8c07787f9591\/mzaf_10471747132237969703.plus.aac.p.m4a",
+      "title" : "Second Skin (2024 Remaster)"
+    },
+    {
+      "artistName" : "Harvey Danger",
+      "artwork" : {
+        "bgColor" : "a79971",
+        "height" : 1411,
+        "textColor1" : "0f0b03",
+        "textColor2" : "161106",
+        "textColor3" : "2d2719",
+        "textColor4" : "332d1c",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music122\/v4\/47\/e9\/37\/47e937d8-a54a-ddb2-0f0a-459c94782f1f\/06UMGIM58976.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 1423
+      },
+      "id" : "1440923493",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/43\/30\/64\/433064e8-7e34-e257-d4a5-0d230cdccd1b\/mzaf_8678036031483705203.plus.aac.p.m4a",
+      "title" : "Flagpole Sitta"
+    },
+    {
+      "artistName" : "Alice In Chains",
+      "artwork" : {
+        "bgColor" : "2c0f12",
+        "height" : 600,
+        "textColor1" : "deafb5",
+        "textColor2" : "ea8e3b",
+        "textColor3" : "ba8f95",
+        "textColor4" : "c47433",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music\/ff\/eb\/d8\/mzi.wegmszqt.jpg\/{w}x{h}bb.jpg",
+        "width" : 600
+      },
+      "id" : "388144324",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/e5\/bf\/a2\/e5bfa2e7-133b-ef77-d799-c8e523e8da7a\/mzaf_6357033570619664483.plus.aac.p.m4a",
+      "title" : "No Excuses (Live)"
+    },
+    {
+      "artistName" : "Fleet Foxes",
+      "artwork" : {
+        "bgColor" : "53542c",
+        "height" : 1500,
+        "textColor1" : "d1e9e0",
+        "textColor2" : "eddaab",
+        "textColor3" : "b8cbbc",
+        "textColor4" : "cebf92",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music112\/v4\/b5\/13\/5d\/b5135d6b-97e1-19cb-4234-5f711b77972e\/098787077766.png\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "281086428",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/60\/3b\/78\/603b7868-5a1c-9268-74ba-ac19292c21f4\/mzaf_10722627666222253774.plus.aac.p.m4a",
+      "title" : "White Winter Hymnal"
+    },
+    {
+      "artistName" : "Death Cab for Cutie",
+      "artwork" : {
+        "bgColor" : "eda857",
+        "height" : 1400,
+        "textColor1" : "0c0d0d",
+        "textColor2" : "251911",
+        "textColor3" : "392c1b",
+        "textColor4" : "4d351f",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music125\/v4\/94\/56\/15\/94561549-e863-502d-db56-8c15c871f0f8\/655173103227.jpg\/{w}x{h}bb.jpg",
+        "width" : 1400
+      },
+      "id" : "718938137",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview211\/v4\/ee\/a7\/cf\/eea7cfe8-13ca-9bfe-7644-f55b1070f1da\/mzaf_4406228493575868789.plus.aac.p.m4a",
+      "title" : "The New Year"
+    },
+    {
+      "artistName" : "The Presidents of the United States of America",
+      "artwork" : {
+        "bgColor" : "efeeef",
+        "height" : 3000,
+        "textColor1" : "110908",
+        "textColor2" : "39150b",
+        "textColor3" : "3d3736",
+        "textColor4" : "5d4038",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music221\/v4\/00\/a7\/59\/00a759d7-0d37-ea66-358b-a2ebd785aae0\/723721042851_cover.jpg\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "1861769503",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview211\/v4\/28\/22\/b8\/2822b866-578d-1778-80f2-88c0947caa3d\/mzaf_10038804631948024303.plus.aac.p.m4a",
+      "title" : "Peaches"
+    },
+    {
+      "artistName" : "Heart",
+      "artwork" : {
+        "bgColor" : "fbf5e9",
+        "height" : 1500,
+        "textColor1" : "0f0e0e",
+        "textColor2" : "151312",
+        "textColor3" : "3e3c3a",
+        "textColor4" : "43403d",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music122\/v4\/6b\/eb\/a8\/6beba879-07ae-a03f-c1bc-091ca7064842\/13UMGIM47968.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "1440830903",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/24\/bd\/93\/24bd93c5-2011-32c3-f67f-48f8ebbea41a\/mzaf_137028963923356712.plus.aac.p.m4a",
+      "title" : "Magic Man"
+    },
+    {
+      "artistName" : "The Jimi Hendrix Experience",
+      "artwork" : {
+        "bgColor" : "17191a",
+        "height" : 1500,
+        "textColor1" : "e9bb96",
+        "textColor2" : "eaa84d",
+        "textColor3" : "bf9b7d",
+        "textColor4" : "c08b43",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music125\/v4\/53\/e9\/b9\/53e9b9f0-97f4-aac7-ee5b-12c2f2007ad3\/884977413878.jpg\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "344799590",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview211\/v4\/77\/0b\/d9\/770bd92a-3f2b-aba2-972e-8f992117eb8d\/mzaf_16302080277573969288.plus.aac.p.m4a",
+      "title" : "The Wind Cries Mary"
+    },
+    {
+      "artistName" : "Soundgarden",
+      "artwork" : {
+        "bgColor" : "000000",
+        "height" : 1408,
+        "textColor1" : "f3f3f3",
+        "textColor2" : "cecece",
+        "textColor3" : "c2c2c2",
+        "textColor4" : "a5a5a5",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music221\/v4\/ae\/b6\/d6\/aeb6d672-2004-41eb-ccba-e2964643a2bc\/06UMGIM18607.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 1430
+      },
+      "id" : "1440811476",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/86\/91\/8b\/86918b37-ade5-1a2d-4416-781fb4a6c6a9\/mzaf_15973337414837811473.plus.aac.p.m4a",
+      "title" : "Fell On Black Days"
+    },
+    {
+      "artistName" : "Nirvana",
+      "artwork" : {
+        "bgColor" : "006783",
+        "height" : 1500,
+        "textColor1" : "68e2f8",
+        "textColor2" : "38d6f9",
+        "textColor3" : "53cae1",
+        "textColor4" : "2dc0e2",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music115\/v4\/95\/fd\/b9\/95fdb9b2-6d2b-92a6-97f2-51c1a6d77f1a\/00602527874609.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "1440783774",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/92\/11\/0b\/92110bb1-3412-8819-cc91-72ef7a24b221\/mzaf_7218167161077612123.plus.aac.p.m4a",
+      "title" : "Drain You"
+    },
+    {
+      "artistName" : "Sunny Day Real Estate",
+      "artwork" : {
+        "bgColor" : "c6ae98",
+        "height" : 1500,
+        "textColor1" : "1c1a18",
+        "textColor2" : "201e20",
+        "textColor3" : "3e3731",
+        "textColor4" : "413b38",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music122\/v4\/17\/13\/36\/1713363b-de85-f15a-6c1d-e1eb31e8f0e1\/098787084665.png\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "329697217",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/03\/42\/83\/03428355-fbcf-9ba3-a971-588c613b83d7\/mzaf_5928617766417222759.plus.aac.p.m4a",
+      "title" : "In Circles (2009 Remastered Version)"
+    },
+    {
+      "artistName" : "Pearl Jam",
+      "artwork" : {
+        "bgColor" : "f6f5f6",
+        "height" : 1500,
+        "textColor1" : "080809",
+        "textColor2" : "191919",
+        "textColor3" : "383738",
+        "textColor4" : "454545",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music221\/v4\/fd\/5e\/6c\/fd5e6cb8-6d06-8b09-d8fa-2944931b7318\/196873427706.jpg\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "1826659403",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/0f\/e0\/43\/0fe043fe-6d9b-1905-a7cc-16d86aaf4a21\/mzaf_12773218497352363265.plus.aac.p.m4a",
+      "title" : "State of Love and Trust"
+    },
+    {
+      "artistName" : "Mudhoney",
+      "artwork" : {
+        "bgColor" : "333333",
+        "height" : 1500,
+        "textColor1" : "e3e5e6",
+        "textColor2" : "cccccf",
+        "textColor3" : "c0c1c2",
+        "textColor4" : "adadb0",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music116\/v4\/c5\/3e\/d6\/c53ed6de-becb-b08b-cecd-ab38a8f26d1b\/098787077360.png\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "279888943",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/07\/19\/3b\/07193b02-c971-ca21-18e9-d1ec26d4abae\/mzaf_2783762885995514553.plus.aac.p.m4a",
+      "title" : "Touch Me I'm Sick"
+    },
+    {
+      "artistName" : "Zeffon",
+      "artwork" : {
+        "bgColor" : "6eb8ed",
+        "height" : 3000,
+        "textColor1" : "1f1146",
+        "textColor2" : "251b3c",
+        "textColor3" : "2e3267",
+        "textColor4" : "343a5f",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music113\/v4\/da\/55\/93\/da559365-211a-d8b4-ec8c-830f44028fc5\/5059366517184_cover.jpg\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "1491778072",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview123\/v4\/4a\/73\/be\/4a73be71-5dcc-7748-412f-dfbf8710fdd4\/mzaf_4234717670465563289.plus.aac.p.m4a",
+      "title" : "Mayb' Door"
+    },
+    {
+      "artistName" : "TAD",
+      "artwork" : {
+        "bgColor" : "1f1d1c",
+        "height" : 2500,
+        "textColor1" : "de896a",
+        "textColor2" : "ec8168",
+        "textColor3" : "b7745a",
+        "textColor4" : "c36d58",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music125\/v4\/2f\/2d\/c6\/2f2dc647-a6c7-d2da-21d1-707c5cdf1052\/TAD_8waysanta_2500px.jpg\/{w}x{h}bb.jpg",
+        "width" : 2500
+      },
+      "id" : "1146562765",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview125\/v4\/e4\/a9\/88\/e4a9886b-42b4-c0ef-fc73-11c0fe665860\/mzaf_1591065743655287576.plus.aac.p.m4a",
+      "title" : "Jinx (2016 Remastered Version)"
+    },
+    {
+      "artistName" : "Shabazz Palaces",
+      "artwork" : {
+        "bgColor" : "ffffff",
+        "height" : 3000,
+        "textColor1" : "101010",
+        "textColor2" : "212121",
+        "textColor3" : "3f3f3f",
+        "textColor4" : "4d4d4d",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music118\/v4\/34\/bb\/b0\/34bbb011-d7c6-028a-1516-0e0532e275cf\/dj.msvxwupj.jpg\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "867147954",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview125\/v4\/c7\/d4\/f7\/c7d4f7dd-afb9-91af-f85d-47eee679f14f\/mzaf_13998642129988704811.plus.aac.p.m4a",
+      "title" : "Forerunner Foray"
+    },
+    {
+      "artistName" : "BUNT.",
+      "artwork" : {
+        "bgColor" : "1d1d1d",
+        "height" : 3000,
+        "textColor1" : "f0f0f0",
+        "textColor2" : "dadada",
+        "textColor3" : "c6c6c6",
+        "textColor4" : "b4b4b4",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music123\/v4\/cf\/8c\/47\/cf8c4719-9be0-6e81-df35-32b2906ddaf8\/19UMGIM55607.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "1469320508",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/15\/03\/3c\/15033ccb-bdc9-4fdf-bc52-6e5c0b24bf5f\/mzaf_12138546530249341530.plus.aac.p.m4a",
+      "title" : "Sure Don't Miss You (feat. The Dip) [Club Edit]"
+    },
+    {
+      "artistName" : "Sir Mix-A-Lot",
+      "artwork" : {
+        "bgColor" : "d2b7a1",
+        "height" : 1411,
+        "textColor1" : "0f0e0c",
+        "textColor2" : "101010",
+        "textColor3" : "36302a",
+        "textColor4" : "36312d",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music115\/v4\/b8\/f0\/24\/b8f02422-bd03-7534-d931-86517de0ce22\/00602537351251.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 1420
+      },
+      "id" : "1440818475",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/f1\/b7\/9a\/f1b79a27-2b22-7d4d-8104-a66827a8cc07\/mzaf_4424622930111308618.plus.aac.p.m4a",
+      "title" : "Posse On Broadway"
+    },
+    {
+      "artistName" : "Kylydian",
+      "artwork" : {
+        "bgColor" : "152229",
+        "height" : 3000,
+        "textColor1" : "d69d40",
+        "textColor2" : "e19821",
+        "textColor3" : "b0853b",
+        "textColor4" : "b88022",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music112\/v4\/5d\/7f\/49\/5d7f49dc-a8b9-4ea0-3e96-9cdd8478bd63\/811576033923.png\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "1542010202",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview125\/v4\/c3\/d0\/c5\/c3d0c50c-164c-37a7-55ca-b3bdbffe68cf\/mzaf_16800682068947010633.plus.aac.p.m4a",
+      "title" : "Silent Knight"
+    },
+    {
+      "artistName" : "The Head and the Heart",
+      "artwork" : {
+        "bgColor" : "9c9c9a",
+        "height" : 1400,
+        "textColor1" : "0b0b0a",
+        "textColor2" : "1f1d19",
+        "textColor3" : "282827",
+        "textColor4" : "383633",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music221\/v4\/97\/4d\/d9\/974dd997-73af-5ed2-530c-892ec10f9deb\/0098787091564_Cover.jpg\/{w}x{h}bb.jpg",
+        "width" : 1400
+      },
+      "id" : "1771697404",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/96\/6a\/09\/966a0925-ef44-1ef4-9325-0e840ce50450\/mzaf_3645852307932769750.plus.aac.p.m4a",
+      "title" : "Down in the Valley"
+    },
+    {
+      "artistName" : "Blue Scholars",
+      "artwork" : {
+        "bgColor" : "8f8f8f",
+        "height" : 1600,
+        "textColor1" : "111111",
+        "textColor2" : "111111",
+        "textColor3" : "2a2a2a",
+        "textColor4" : "2a2a2a",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music123\/v4\/be\/1a\/87\/be1a878a-08e0-e0a7-7655-1f3fa7b7d216\/859707241496_cover.jpg\/{w}x{h}bb.jpg",
+        "width" : 1600
+      },
+      "id" : "506819245",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview125\/v4\/07\/ba\/51\/07ba5167-1240-4961-e58f-4a9c38948a43\/mzaf_8267258399478645128.plus.aac.p.m4a",
+      "title" : "Loyalty"
+    },
+    {
+      "artistName" : "Black Sabbath",
+      "artwork" : {
+        "bgColor" : "040405",
+        "height" : 1425,
+        "textColor1" : "b2c8e3",
+        "textColor2" : "9eb5d1",
+        "textColor3" : "8fa1b7",
+        "textColor4" : "7f92a8",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music125\/v4\/26\/d6\/fb\/26d6fb50-5e33-baf7-98ec-13b167b06387\/mzi.bxsjhsxe.jpg\/{w}x{h}bb.jpg",
+        "width" : 1425
+      },
+      "id" : "298099932",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/df\/26\/a7\/df26a7b1-9af0-7116-bc64-7f48d3818d06\/mzaf_13068196274642023453.plus.aac.p.m4a",
+      "title" : "Heaven and Hell"
+    },
+    {
+      "artistName" : "Dale Crover",
+      "artwork" : {
+        "bgColor" : "1b080a",
+        "height" : 2000,
+        "textColor1" : "d6cfcf",
+        "textColor2" : "dd818b",
+        "textColor3" : "b0a7a8",
+        "textColor4" : "b66971",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music117\/v4\/3d\/20\/eb\/3d20ebdd-95e3-6f4c-d553-660bc47244c5\/714270691270.jpg\/{w}x{h}bb.jpg",
+        "width" : 2000
+      },
+      "id" : "1240430261",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview125\/v4\/91\/c6\/9e\/91c69e8b-5bf7-88dc-f4d6-532fdd543c77\/mzaf_255586303770284353.plus.aac.p.m4a",
+      "title" : "Fickle Finger of Fate"
+    },
+    {
+      "artistName" : "The Afghan Whigs",
+      "artwork" : {
+        "bgColor" : "c69644",
+        "height" : 2400,
+        "textColor1" : "180f11",
+        "textColor2" : "1f1113",
+        "textColor3" : "3b2a1b",
+        "textColor4" : "402b1d",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music112\/v4\/2f\/5b\/0a\/2f5b0ae8-fde0-82b6-9f9d-b738ddd3fb56\/075596150125.jpg\/{w}x{h}bb.jpg",
+        "width" : 2400
+      },
+      "id" : "910721023",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview221\/v4\/23\/07\/be\/2307be2a-375f-5261-9b4f-ec6c849e7fa2\/mzaf_15958099168503041363.plus.aac.p.m4a",
+      "title" : "Gentlemen"
+    },
+    {
+      "artistName" : "Bing Crosby",
+      "artwork" : {
+        "bgColor" : "000000",
+        "height" : 3000,
+        "textColor1" : "ebe2c2",
+        "textColor2" : "d5cfa4",
+        "textColor3" : "bcb59b",
+        "textColor4" : "aaa683",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music126\/v4\/d7\/13\/4d\/d7134d72-7283-e204-3846-e0c189a1c143\/06UMGIM04667.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "1445744470",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview211\/v4\/ed\/c9\/58\/edc9582a-c146-c592-da72-1355f9f5ec4e\/mzaf_17142815491402832984.plus.aac.p.m4a",
+      "title" : "Swinging On a Star"
+    },
+    {
+      "artistName" : "scntfc",
+      "artwork" : {
+        "bgColor" : "29fdc4",
+        "height" : 3000,
+        "textColor1" : "092c15",
+        "textColor2" : "0d3914",
+        "textColor3" : "105538",
+        "textColor4" : "136037",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music221\/v4\/10\/48\/bb\/1048bb89-0e0e-7832-608f-4a88dba4ffb0\/8721056922291.png\/{w}x{h}bb.jpg",
+        "width" : 3000
+      },
+      "id" : "1743290477",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview211\/v4\/71\/a5\/63\/71a5636f-7ef5-ce0d-f1e7-e8c703469f07\/mzaf_14136367936567441501.plus.aac.p.m4a",
+      "title" : "Sneaky Sasquatch"
+    },
+    {
+      "artistName" : "Odd Logic",
+      "artwork" : {
+        "bgColor" : "3d2a24",
+        "height" : 1400,
+        "textColor1" : "d6cebc",
+        "textColor2" : "d0ab96",
+        "textColor3" : "b7ad9e",
+        "textColor4" : "b3917f",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music122\/v4\/d6\/14\/61\/d614617c-054e-8729-f5e3-224287ad82cb\/888295550352.jpg\/{w}x{h}bb.jpg",
+        "width" : 1400
+      },
+      "id" : "1199721179",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview115\/v4\/18\/f7\/d2\/18f7d232-a314-223d-1959-c0722f819211\/mzaf_7099827924742965281.plus.aac.p.m4a",
+      "title" : "Master of the Moor"
+    },
+    {
+      "artistName" : "Nirvana",
+      "artwork" : {
+        "bgColor" : "f0e9b5",
+        "height" : 1500,
+        "textColor1" : "332319",
+        "textColor2" : "31281f",
+        "textColor3" : "594a38",
+        "textColor4" : "574e3d",
+        "url" : "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Music125\/v4\/e3\/20\/03\/e32003a4-99bc-1c70-40ba-001882f35dba\/00602537526840.rgb.jpg\/{w}x{h}bb.jpg",
+        "width" : 1500
+      },
+      "id" : "1440859612",
+      "previewUrl" : "https:\/\/audio-ssl.itunes.apple.com\/itunes-assets\/AudioPreview211\/v4\/09\/af\/91\/09af9163-f85a-b85d-d638-71f442a65e2c\/mzaf_15732394013627380669.plus.aac.p.m4a",
+      "title" : "All Apologies"
+    }
+  ],
+  "caseVersion" : 2,
+  "description" : "A Trip Tunes gift tape — Seattle Soundscapes.",
+  "id" : "6FB69119-0270-41DA-AE44-B09FFF677176",
+  "musicKitID" : null,
+  "name" : "Seattle Soundscapes",
+  "persisted" : false,
+  "sharedSource" : 2
+}
