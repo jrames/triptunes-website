@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Tunes 3.0 Preview — Your mixtapes, more places to go</title>
+  <meta name="description" content="Coming soon: Trip Tunes 3.0 sends your road-trip mixtapes to Spotify and other music services through Soundiiz, adds Unlimited Tapes as a one-time purchase with no subscription, and keeps your tape library in iCloud so it follows you to a new iPhone." />
+  <link rel="canonical" href="https://triptunes.xyz/trip-tunes-3/" />
+  <link rel="icon" href="../assets/app/app-icon.png" />
+  <meta property="og:title" content="Trip Tunes 3.0 — Your mixtapes, more places to go" />
+  <meta property="og:description" content="Coming soon: export road-trip mixtapes to Spotify and more, unlock Unlimited Tapes once with no subscription, and keep your library in iCloud." />
+  <meta property="og:image" content="https://triptunes.xyz/assets/app/app-icon.png" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    @font-face {
+      font-family: "Delicious Handrawn";
+      src: url("../assets/fonts/DeliciousHandrawn-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+    :root {
+      --coral: #FA8E85; --rust: #C9462F; --cream: #F6F1E4; --paper: #FBF7EC;
+      --navy: #011E2D; --gold: #F4C20D; --ink: #2c2620; --muted: #7a6c5f; --line: #e2d8c4;
+      --hand: "Delicious Handrawn", "Marker Felt", cursive;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--ink); background: var(--cream); line-height: 1.6; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--rust); }
+
+    /* ---- App Store badge (matches the rest of the site) ---- */
+    .appstore { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: var(--navy); color: #fff; padding: 11px 18px; border-radius: 10px; }
+    .appstore svg { width: 20px; height: 20px; fill: #fff; }
+    .appstore small { display: block; font-size: .6rem; line-height: 1; opacity: .85; }
+    .appstore strong { display: block; font-size: 1rem; line-height: 1.15; }
+
+    /* ---- Header (unified secondary-page header) ---- */
+    header { background: var(--paper); border-bottom: 4px solid var(--gold); }
+    .ph { display: flex; align-items: center; gap: 22px; padding: 26px 24px; max-width: 920px; margin: 0 auto; flex-wrap: wrap; }
+    .ph .iconlink { flex: none; line-height: 0; border-radius: 17px; transition: transform .15s ease; }
+    .ph .iconlink:hover { transform: translateY(-2px); }
+    .ph img.icon { width: 70px; height: 70px; border-radius: 16px; box-shadow: 0 6px 16px rgba(1,30,45,.2); display: block; }
+    .ph .titles { flex: 1; min-width: 220px; }
+    .kicker { font-family: -apple-system, sans-serif; text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; color: var(--rust); font-weight: 700; }
+    .ph h1 { font-family: var(--hand); font-size: 2.6rem; color: var(--navy); line-height: 1; margin: 2px 0; }
+    .ph .tagline { color: var(--muted); font-size: .98rem; }
+
+    /* ---- Hero ---- */
+    .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; padding: 52px 0 44px; }
+    .hero h2 { font-family: var(--hand); font-size: 3.1rem; color: var(--navy); line-height: 1.02; }
+    .hero .hook { font-size: 1.18rem; margin: 16px 0 6px; }
+    .hero ul { list-style: none; margin: 18px 0 0; display: grid; gap: 8px; }
+    .hero li { padding-left: 1.6rem; position: relative; }
+    .hero li::before { content: ""; position: absolute; left: 0; top: .45em; width: .9rem; height: .9rem; border-radius: 50%; background: var(--coral); }
+    .hero .cta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 26px; }
+    .launch { color: var(--rust); font-weight: 700; font-size: .95rem; }
+    .launch span { display: block; color: var(--muted); font-weight: 400; font-size: .82rem; }
+
+    /* ---- CSS phone frame (same uniform bezel as /b-sides/ and /suggest-a-trip/) ---- */
+    .device { background: #0c0c0e; padding: 11px; border-radius: 48px;
+      box-shadow: 0 22px 46px rgba(1,30,45,.30), inset 0 0 0 2px rgba(255,255,255,.07); }
+    .device img { display: block; width: 100%; height: auto; border-radius: 38px; }
+    .demo-phone { display: block; width: 100%; max-width: 296px; margin: 0 auto; }
+    .demo-phone .device { padding: 12px; border-radius: 52px; }
+
+    /* ---- Section scaffolding ---- */
+    .section { padding: 46px 0; border-top: 1px solid var(--line); }
+    .section-head { text-align: center; max-width: 620px; margin: 0 auto 38px; }
+    .section-head .eyebrow, .spotlight .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; color: var(--rust); font-weight: 700; }
+    .section-head h2 { font-family: var(--hand); font-size: 2.4rem; color: var(--navy); line-height: 1.05; margin-top: 4px; }
+    .section-head p { color: var(--muted); margin-top: 8px; }
+
+    /* ---- Feature rows ---- */
+    .spotlight { display: flex; align-items: center; gap: 40px; }
+    .spotlight.reverse { flex-direction: row-reverse; }
+    .spotlight .art { flex: none; width: 236px; }
+    .spotlight .art .device { padding: 9px; border-radius: 40px; }
+    .spotlight .art .device img { border-radius: 31px; }
+    .spotlight .art.card { width: 300px; }
+    .spotlight .art.card img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(1,30,45,.18); }
+    .spotlight .body { flex: 1; }
+    .spotlight h2 { font-family: var(--hand); font-size: 2.3rem; color: var(--navy); line-height: 1.05; margin: 4px 0 10px; }
+    .spotlight .body p { font-size: 1.05rem; }
+    .spotlight .body p + p { margin-top: 10px; }
+    .spotlight .fine { color: var(--muted); font-size: .88rem !important; }
+
+    /* ---- iCloud highlight (navy card) ---- */
+    .fm { background: var(--navy); color: var(--cream); border-radius: 16px; padding: 40px 38px; text-align: center; max-width: 760px; margin: 0 auto; }
+    .fm .eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); font-weight: 700; }
+    .fm h2 { font-family: var(--hand); color: #fff; font-size: 2.3rem; margin: 8px 0 12px; line-height: 1.05; }
+    .fm p { opacity: .94; margin: 0 auto; max-width: 600px; }
+    .fm p + p { margin-top: 10px; }
+    .fm .fine { opacity: .7; font-size: .85rem; }
+
+    /* ---- Still in the case: links to existing feature pages ---- */
+    .still { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .still a { display: block; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--line);
+      border-radius: 14px; padding: 20px 20px 18px; transition: transform .15s ease, box-shadow .15s ease; }
+    .still a:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(1,30,45,.10); }
+    .still h3 { font-family: var(--hand); font-size: 1.6rem; color: var(--navy); line-height: 1.05; margin-bottom: 6px; }
+    .still p { font-size: .95rem; color: var(--muted); }
+
+    /* ---- Closing CTA ---- */
+    .closing { text-align: center; }
+    .closing h2 { font-family: var(--hand); font-size: 2.4rem; color: var(--navy); line-height: 1.05; }
+    .closing p { color: var(--muted); margin: 8px 0 22px; }
+
+    footer { border-top: 1px solid var(--line); padding: 24px; text-align: center; color: var(--muted); font-size: .85rem; }
+    footer a { color: var(--rust); }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; text-align: center; padding: 40px 0 34px; }
+      .hero ul { text-align: left; max-width: 420px; margin-left: auto; margin-right: auto; }
+      .hero .cta-row { justify-content: center; }
+      .hero .demo-phone { order: -1; max-width: 260px; }
+      .still { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .ph .titles { flex: 1 1 220px; min-width: 0; }
+      .hero-copy { min-width: 0; }
+      .ph h1 { font-size: 2.2rem; }
+      .hero h2 { font-size: 2.5rem; }
+      .spotlight, .spotlight.reverse { flex-direction: column; text-align: center; gap: 20px; }
+      .spotlight .art { width: 230px; }
+      .spotlight .art.card { width: 100%; max-width: 320px; }
+      .fm { padding: 32px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="ph">
+      <a href="/" class="iconlink" aria-label="Trip Tunes home"><img class="icon" src="../assets/app/app-icon.png" alt="Trip Tunes app icon" /></a>
+      <div class="titles">
+        <div class="kicker">Coming soon · Version 3.0 preview</div>
+        <h1>Trip Tunes 3.0</h1>
+        <div class="tagline">Your mixtapes, more places to go.</div>
+      </div>
+      <a class="appstore" data-goatcounter-click="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h2>Your mixtapes, more places to go.</h2>
+        <p class="hook">The biggest Trip&nbsp;Tunes update yet takes your road-trip mixtapes beyond Apple&nbsp;Music, lets you stop counting tapes, and keeps your tape library in sync.</p>
+        <ul>
+          <li><strong>More places to listen</strong> &mdash; Apple&nbsp;Music, Spotify, and more.</li>
+          <li><strong>Unlimited Tapes</strong> &mdash; one purchase, no subscription.</li>
+          <li><strong>iCloud library</strong> &mdash; your tapes follow you to a new iPhone.</li>
+        </ul>
+        <div class="cta-row">
+          <a class="appstore" data-goatcounter-click="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+          <!-- LAUNCH: change to "Out now / Available on the App Store" on release day. -->
+          <div class="launch">Coming soon<span>Free app update · Unlimited sold separately</span></div>
+        </div>
+      </div>
+
+      <div class="demo-phone">
+        <div class="device"><img src="../assets/screenshots/v3-library.png" alt="A Trip Tunes library with the Unlimited tape in the blank tapes section and one mixtape slid out of its case to show a TRASH label" /></div>
+      </div>
+    </section>
+
+    <!-- ===== Export ===== -->
+    <section class="section">
+      <div class="spotlight">
+        <div class="art card"><img src="../assets/screenshots/v3-export.png" alt="The Export to… sheet: Apple Music, Spotify via Soundiiz, and Other Services via Soundiiz, with the Use this every time box checked" /></div>
+        <div class="body">
+          <div class="eyebrow">Spotify and more</div>
+          <h2>Take your mixtape with you</h2>
+          <p>Trip&nbsp;Tunes still saves straight into <strong>Apple&nbsp;Music</strong>. Now a finished tape can also go to <strong>Spotify</strong> and other supported music services: tap Export, pick where it&rsquo;s headed, and Trip&nbsp;Tunes hands the song list to <strong>Soundiiz</strong> to finish the transfer.</p>
+          <p>Always use the same service? Check <em>Use this every time</em> and skip the question next trip.</p>
+          <p class="fine">Transfers to other services are provided by Soundiiz. Destination services may require an account or subscription, and track availability can vary. Trip&nbsp;Tunes never sees your passwords or sign-ins for those services.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Unlimited Tapes ===== -->
+    <section class="section">
+      <div class="spotlight reverse">
+        <div class="art"><div class="device"><img src="../assets/screenshots/v3-unlimited.png" alt="The Trip Tunes tape shop with Unlimited Tapes and a 10-tape refill" /></div></div>
+        <div class="body">
+          <div class="eyebrow">Unlimited Tapes</div>
+          <h2>Pay once. Stop counting tapes.</h2>
+          <p>Every new mix still starts with a blank tape. Now there&rsquo;s a tape that never runs out: <strong>Unlimited Tapes</strong> is a one-time purchase that lets you keep making mixes without spending your blank tapes, with <strong>no Trip Tunes subscription</strong>.</p>
+          <p>Prefer to top up as you go? A 10-tape refill is still on the shelf. Any tapes you already have stay yours when you upgrade, and your purchase restores on a new iPhone.</p>
+          <p class="fine">Unlimited Tapes is for personal use; fair-use limits help prevent abuse.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== iCloud library (navy card) ===== -->
+    <section class="section">
+      <div class="fm">
+        <div class="eyebrow">Your library, everywhere</div>
+        <h2>Your tapes, together.</h2>
+        <p>Your saved Trip&nbsp;Tunes library syncs automatically through your own iCloud account. Reinstall the app or move to a new iPhone, and your synced tapes return when you sign in with the same iCloud account. Your collection stays in step across your iPhones.</p>
+        <p>Cleaning out the case? Slide a tape sideways and trash it. Change your mind, and Undo puts it right back. Copies you&rsquo;ve already exported to a music service stay where they are.</p>
+        <p class="fine">Requires an iCloud account with available storage. Library sync uses your private iCloud storage. Tapes you choose to share are handled separately.</p>
+      </div>
+    </section>
+
+    <!-- ===== UI polish ===== -->
+    <section class="section">
+      <div class="section-head">
+        <div class="eyebrow">Made to feel like a mixtape</div>
+        <h2>A little more delight in every tape.</h2>
+        <p>Restyled track lists, paper-note confirmations, and tapes that slide out of their cases make the whole experience feel more immersive. Unlock Unlimited and watch its handwritten label come to life.</p>
+      </div>
+    </section>
+
+    <!-- ===== Still in the case ===== -->
+    <section class="section">
+      <div class="section-head">
+        <div class="eyebrow">Still in the case</div>
+        <h2>Everything you already love</h2>
+      </div>
+      <div class="still">
+        <a href="/b-sides/">
+          <h3>B-Sides</h3>
+          <p>Discover local music from around the globe on a community wall of road-trip mixtapes. Dub your favorites for free.</p>
+        </a>
+        <a href="/suggest-a-trip/">
+          <h3>Suggest a Trip</h3>
+          <p>Roll the dice for a destination and a fresh soundtrack when you don&rsquo;t know where to go.</p>
+        </a>
+        <a href="/tapes/">
+          <h3>Gift Tapes</h3>
+          <p>Free curated mixtapes for iconic drives, ready to play.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Closing CTA ===== -->
+    <section class="section closing">
+      <h2>Load a blank tape and hit the road.</h2>
+      <p>Trip Tunes 3.0 is coming soon as a free app update, with Unlimited Tapes available as an optional purchase. Download the current version to start your collection.</p>
+      <a class="appstore" data-goatcounter-click="appstore" href="https://apps.apple.com/app/id6467522749" target="_blank" rel="noopener" style="display:inline-flex;"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a>
+    </section>
+
+  </main>
+
+  <footer>
+    <a href="/">Home</a> &middot; <a href="/privacy/">Privacy</a><br/><br/>
+    &copy; 2026 Trip Tunes &middot; Not affiliated with Apple, Spotify, or Soundiiz. Apple Music is a trademark of Apple Inc. Spotify is a trademark of Spotify AB.
+  </footer>
+
+  <!-- GoatCounter — privacy-friendly analytics (pageviews + tagged App Store clicks) -->
+  <script data-goatcounter="https://triptunes.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
