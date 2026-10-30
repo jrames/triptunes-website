@@ -244,6 +244,12 @@ HUB = r"""<!DOCTYPE html>
     .meta h2 { font-family:var(--hand); font-size:1.9rem; color:var(--navy); line-height:1; }
     .meta .teaser { color:var(--ink); font-size:.9rem; margin-top:6px; }
     .meta .sub { color:var(--muted); font-size:.8rem; margin-top:6px; }
+    .wall-band { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 20px; margin:26px 0 6px; padding:18px 22px;
+      background:var(--navy); color:#fff; border-radius:14px; text-decoration:none; }
+    .wall-band .msg { font-family:var(--hand); font-size:1.7rem; line-height:1.05; }
+    .wall-band .msg small { display:block; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; font-size:.9rem; color:#d8dde0; margin-top:4px; }
+    .wall-band .go { font-family:var(--mono); color:var(--coral); white-space:nowrap; }
+    .wall-band:hover .go { color:var(--gold); }
     footer { text-align:center; color:var(--muted); font-size:.85rem; padding:30px 24px 44px; }
     footer a { color:var(--rust); }
     @media (max-width:520px){ .ph h1{font-size:2.4rem;} .ph .iconlink img{width:62px;height:62px;} }
@@ -262,6 +268,10 @@ HUB = r"""<!DOCTYPE html>
     <div class="gallery">
 @@CARDS@@
     </div>
+    <a class="wall-band" href="/b-sides/wall/" data-goatcounter-click="tapes-bsides-wall">
+      <span class="msg">Want mixes from other travelers?<small>The B-Sides wall: road-trip tapes made by Trip Tunes users for real drives.</small></span>
+      <span class="go">Browse the wall &raquo;</span>
+    </a>
   </main>
   <footer>
     <a href="/">&larr; Back to Trip Tunes</a> &middot; <a href="/privacy/">Privacy</a><br/><br/>
