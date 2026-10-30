@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The B-Sides Wall — Road-Trip Mixtapes from Travelers | Trip Tunes</title>
+  <meta name="description" content="Road-trip mixtapes made by Trip Tunes travelers for real trips, each stamped with where it was headed. Preview every track, then dub any tape free in the app." />
+  <link rel="canonical" href="https://triptunes.xyz/b-sides/wall/" />
+  <link rel="icon" href="../../assets/app/app-icon.png" />
+  <meta property="og:title" content="The B-Sides Wall — Trip Tunes" />
+  <meta property="og:description" content="Mixtapes made by travelers for real road trips. Preview them here, dub them free in Trip Tunes." />
+  <meta property="og:image" content="https://triptunes.xyz/assets/app/app-icon.png" />
+  <meta property="og:type" content="website" />
+  <style>
+    @font-face { font-family:"Delicious Handrawn"; src:url("../../assets/fonts/DeliciousHandrawn-Regular.ttf") format("truetype"); font-display:swap; }
+    :root { --coral:#FA8E85; --rust:#C9462F; --cream:#F6F1E4; --paper:#FBF7EC; --navy:#011E2D; --gold:#F4C20D; --ink:#2c2620; --muted:#7a6c5f; --line:#e2d8c4; --cork:#c89f6b; --hand:"Delicious Handrawn","Marker Felt",cursive; --mono:"Courier New",monospace; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.6;
+      background: radial-gradient(circle at 15% 8%, rgba(250,142,133,.18), transparent 42%),
+                  radial-gradient(circle at 85% 6%, rgba(244,194,13,.16), transparent 40%),
+                  repeating-linear-gradient(0deg, transparent 0 33px, rgba(58,42,34,.045) 33px 34px), var(--cream); }
+    a { color:var(--rust); }
+    .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
+    .ph { display:flex; align-items:center; gap:20px; padding:30px 0 8px; }
+    .ph .iconlink { flex:none; line-height:0; border-radius:17px; transition:transform .15s ease; }
+    .ph .iconlink:hover { transform:translateY(-2px); }
+    .ph .iconlink img { width:78px; height:78px; border-radius:17px; box-shadow:0 6px 16px rgba(1,30,45,.2); }
+    .ph .titles { min-width:0; }
+    .kicker { font-family:var(--mono); text-transform:uppercase; letter-spacing:2px; font-size:.74rem; color:var(--rust); }
+    .ph h1 { font-family:var(--hand); font-size:3.2rem; color:var(--navy); line-height:1.02; margin:4px 0 0; text-shadow:2px 2px 0 var(--coral); }
+    .lead { margin:12px 0 0; max-width:62ch; font-size:1.05rem; }
+    .promise { color:var(--muted); font-size:.9rem; margin-top:8px; max-width:62ch; }
+
+    /* Cork board */
+    .board { margin:28px 0 10px; padding:28px 22px 30px; border-radius:16px;
+      background: radial-gradient(rgba(90,58,30,.22) 1px, transparent 1.4px) 0 0/7px 7px,
+                  radial-gradient(rgba(255,240,210,.25) 1px, transparent 1.5px) 3px 4px/9px 9px, var(--cork);
+      box-shadow: inset 0 0 0 10px #8a5f36, inset 0 0 0 12px #6e4826, 0 14px 30px rgba(1,30,45,.18); }
+    .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:26px 22px; padding:8px; }
+    .tape { position:relative; display:block; width:100%; text-align:left; font:inherit; color:inherit; cursor:pointer; border:none;
+      background:var(--paper); border-radius:6px; padding:10px 10px 12px; box-shadow:0 8px 16px rgba(40,20,5,.28);
+      transform:rotate(var(--tilt,0deg)); transition:transform .15s ease, box-shadow .15s ease; }
+    .tape:hover, .tape:focus-visible { transform:rotate(0deg) translateY(-4px) scale(1.02); box-shadow:0 16px 28px rgba(40,20,5,.34); outline:none; }
+    .tape::before { content:""; position:absolute; top:-7px; left:50%; width:16px; height:16px; margin-left:-8px; border-radius:50%;
+      background:radial-gradient(circle at 35% 35%, #ff9d93, var(--rust) 70%); box-shadow:0 2px 3px rgba(0,0,0,.35); z-index:1; }
+    .mosaic { display:grid; grid-template-columns:1fr 1fr; aspect-ratio:1; border-radius:3px; overflow:hidden; background:var(--line); }
+    .mosaic img { width:100%; height:100%; object-fit:cover; display:block; }
+    .tape h2 { font-family:var(--hand); font-size:1.6rem; color:var(--navy); line-height:1; margin:10px 2px 4px; }
+    .tape .dest { font-size:.82rem; color:var(--ink); margin:0 2px; }
+    .tape .sub { font-size:.76rem; color:var(--muted); margin:2px 2px 0; }
+    .stamp { position:absolute; top:16px; right:14px; font-family:var(--mono); font-size:.66rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+      color:var(--rust); background:rgba(251,247,236,.92); border:2px solid var(--rust); border-radius:4px; padding:1px 6px; transform:rotate(6deg); }
+    .state { text-align:center; color:#3b2412; font-weight:600; padding:30px 10px; background:rgba(251,247,236,.85); border-radius:10px; }
+    .skeleton { height:290px; border-radius:6px; background:rgba(251,247,236,.55); }
+
+    /* CTA + fine print */
+    .cta { display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between; background:var(--navy); color:#fff;
+      border-radius:16px; padding:22px 24px; margin:26px 0 10px; }
+    .cta h3 { font-family:var(--hand); font-size:2rem; line-height:1.05; color:var(--gold); }
+    .cta p { color:#d8dde0; font-size:.95rem; max-width:52ch; }
+    .btn-open { display:inline-flex; align-items:center; gap:8px; background:var(--coral); color:var(--navy); font-weight:700; text-decoration:none; padding:12px 20px; border-radius:10px; white-space:nowrap; }
+    .btn-open:hover { background:#f7766b; }
+    .fine { color:var(--muted); font-size:.85rem; margin:14px 0 0; max-width:70ch; }
+
+    /* Tape detail */
+    dialog { width:min(640px, calc(100% - 24px)); max-height:calc(100% - 40px); margin:auto; border:none; border-radius:16px; padding:0;
+      background:var(--cream); color:var(--ink); box-shadow:0 24px 60px rgba(1,30,45,.4); }
+    dialog::backdrop { background:rgba(1,30,45,.55); }
+    .dlg-head { position:sticky; top:0; z-index:1; display:flex; gap:12px; align-items:flex-start; justify-content:space-between; padding:18px 20px 12px; background:var(--cream); border-bottom:1px solid var(--line); }
+    .dlg-head h2 { font-family:var(--hand); font-size:2.2rem; color:var(--navy); line-height:1; }
+    .dlg-head .dest { font-size:.9rem; margin-top:4px; }
+    .close { flex:none; border:none; background:var(--line); color:var(--navy); width:36px; height:36px; border-radius:50%; font-size:1.1rem; cursor:pointer; }
+    .dlg-body { padding:6px 20px 20px; }
+    .dlg-cta { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:12px 0 4px; }
+    .dlg-cta span { font-size:.9rem; color:var(--muted); }
+    ol.tracks { list-style:none; margin:10px 0 6px; }
+    ol.tracks li { display:flex; align-items:center; gap:12px; padding:8px 6px; border-top:1px solid var(--line); }
+    ol.tracks li:first-child { border-top:none; }
+    .num { color:var(--muted); width:22px; text-align:right; font-variant-numeric:tabular-nums; font-size:.85rem; flex:none; }
+    .play { flex:none; width:38px; height:38px; border-radius:50%; border:none; cursor:pointer; background:var(--navy); color:#fff; display:grid; place-items:center; }
+    .play.playing { background:var(--rust); }
+    .play:disabled { opacity:.3; cursor:default; }
+    .art { width:46px; height:46px; border-radius:7px; object-fit:cover; flex:none; background:var(--line); }
+    .tk { flex:1; min-width:0; }
+    .tk .t { font-weight:600; color:var(--navy); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .tk .a { color:var(--muted); font-size:.84rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .am { flex:none; font-size:.8rem; text-decoration:none; color:var(--rust); white-space:nowrap; }
+    .am:hover { text-decoration:underline; }
+    .attribution { color:var(--muted); font-size:.76rem; margin-top:10px; }
+
+    footer { text-align:center; color:var(--muted); font-size:.85rem; padding:30px 24px 44px; }
+    footer a { color:var(--rust); }
+    @media (max-width:520px){
+      .ph h1{font-size:2.4rem;} .ph .iconlink img{width:62px;height:62px;}
+      .board{padding:22px 12px 24px;} .gallery{grid-template-columns:1fr 1fr; gap:22px 14px; padding:4px;}
+      .tape h2{font-size:1.3rem;} .stamp{top:12px; right:10px;} .am{display:none;}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="ph">
+      <a class="iconlink" href="/" aria-label="Trip Tunes home"><img src="../../assets/app/app-icon.png" alt="Trip Tunes"></a>
+      <div class="titles">
+        <div class="kicker">B-Sides &middot; The Community Wall</div>
+        <h1>Mixes from the road.</h1>
+      </div>
+    </header>
+    <p class="lead">Every tape on this wall was made in Trip Tunes by a traveler, for a real trip, and stamped with where it was headed. Press play on any of them, then dub the whole tape into your own library, free.</p>
+    <p class="promise">Every tape is reviewed by a person before it goes up. No names, no accounts, and the starting point is removed. A tape is just the music and where it was going.</p>
+
+    <section class="board" aria-label="B-Sides tapes">
+      <div class="gallery" id="gallery" aria-busy="true">
+        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h3>Dub any of these, free.</h3>
+        <p>Open Trip Tunes, flip your tape case over to Side B, and copy any wall tape into your library. No tape spent. Made a good one yourself? Send it to the wall from the tape's preview screen.</p>
+      </div>
+      <a class="btn-open" data-goatcounter-click="bsides-wall-store" href="https://apps.apple.com/app/id6467522749">Get Trip Tunes &rarr;</a>
+    </section>
+
+    <p class="fine">Made one of these and want it off the website? Email <a href="mailto:triptunesapp@gmail.com?subject=B-Sides%20website%20removal">triptunesapp@gmail.com</a> with the tape's name and we'll take it down. You can also ask for a tape to come off the in-app wall the same way.</p>
+  </main>
+
+  <dialog id="detail" aria-labelledby="dlg-title">
+    <div class="dlg-head">
+      <div>
+        <div class="kicker">B-Side</div>
+        <h2 id="dlg-title"></h2>
+        <div class="dest" id="dlg-dest"></div>
+      </div>
+      <button class="close" id="dlg-close" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="dlg-body">
+      <div class="dlg-cta">
+        <a class="btn-open" id="dlg-store" href="https://apps.apple.com/app/id6467522749">&#9654; Dub it in Trip Tunes</a>
+        <span>Find it on Side B of your tape case.</span>
+      </div>
+      <ol class="tracks" id="dlg-tracks"></ol>
+      <p class="attribution">Previews and artwork courtesy of iTunes / Apple Music. Each track links to Apple Music.</p>
+    </div>
+  </dialog>
+
+  <footer>
+    <a href="/">&larr; Back to Trip Tunes</a> &middot; <a href="/b-sides/">About B-Sides</a> &middot; <a href="/tapes/">Gift Tapes</a> &middot; <a href="/privacy/">Privacy</a><br/><br/>
+    &copy; 2026 Trip Tunes &middot; Previews &amp; artwork courtesy of iTunes / Apple Music, &copy; their respective owners.
+  </footer>
+
+  <script>
+    // Live copy of the in-app wall, minus tapes the maintainer keeps app-only
+    // (see triptunes-workers/bsides: GET /web-feed). ?feed= overrides it for
+    // local previews only.
+    const params = new URLSearchParams(location.search);
+    const isLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
+    const FEED_URL = (isLocal && params.get('feed')) || 'https://bsides.triptunes.xyz/web-feed';
+
+    const gc = name => { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true }); };
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+    const art = (song, px) => song.artwork && song.artwork.url ? song.artwork.url.replace('{w}', px).replace('{h}', px) : '';
+
+    // "Soundtrack for a roadtrip to Pensacola Beach, crafted by Trip Tunes." → "Pensacola Beach"
+    function destination(tape) {
+      const m = /roadtrip to (.+?), crafted by Trip Tunes\.?$/.exec(tape.description || '');
+      return m ? m[1] : '';
+    }
+    // "US-FL" → "FL", "AUSTRALIA" → "Australia"
+    function stamp(tag) {
+      if (!tag) return '';
+      if (tag.startsWith('US-')) return tag.slice(3);
+      return tag.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+    }
+    // Stable per-tape tilt so the board doesn't reshuffle on every load.
+    function tilt(id) {
+      let h = 0; for (const c of String(id)) h = (h * 31 + c.charCodeAt(0)) | 0;
+      return ((Math.abs(h) % 7) - 3) * 0.8;
+    }
+
+    const gallery = document.getElementById('gallery');
+    let TAPES = [];
+
+    function render() {
+      gallery.setAttribute('aria-busy', 'false');
+      const tapes = TAPES.filter(t => Array.isArray(t.basicSongs) && t.basicSongs.length);
+      if (!tapes.length) {
+        gallery.innerHTML = '<div class="state" style="grid-column:1/-1">The wall is being restocked. Find the latest tapes on Side B in the app.</div>';
+        return;
+      }
+      gallery.innerHTML = tapes.map((t, i) => {
+        const covers = [...new Set(t.basicSongs.map(s => art(s, 200)).filter(Boolean))].slice(0, 4);
+        for (let k = 0; covers.length && covers.length < 4; k++) covers.push(covers[k]);
+        const dest = destination(t);
+        const tag = stamp(t.destinationTag);
+        return `<button class="tape" style="--tilt:${tilt(t.id)}deg" data-i="${TAPES.indexOf(t)}" aria-label="${esc(t.name)}${dest ? ', headed to ' + esc(dest) : ''}">
+          <div class="mosaic">${covers.map(src => `<img loading="lazy" width="200" height="200" src="${esc(src)}" alt="">`).join('')}</div>
+          ${tag ? `<span class="stamp">${esc(tag)}</span>` : ''}
+          <h2>${esc(t.name)}</h2>
+          ${dest ? `<div class="dest">&rarr; ${esc(dest)}</div>` : ''}
+          <div class="sub">${t.basicSongs.length} songs</div>
+        </button>`;
+      }).join('');
+      gallery.querySelectorAll('.tape').forEach(btn => btn.onclick = () => open(TAPES[+btn.dataset.i]));
+    }
+
+    // Tape detail + 30s previews (streamed only, never cached — Apple promo terms).
+    const dlg = document.getElementById('detail');
+    const audio = new Audio(); let playingBtn = null;
+    function stop() { audio.pause(); if (playingBtn) { playingBtn.classList.remove('playing'); playingBtn.textContent = '▶'; playingBtn = null; } }
+    audio.addEventListener('ended', stop);
+
+    function open(t) {
+      stop();
+      document.getElementById('dlg-title').textContent = t.name;
+      const dest = destination(t);
+      document.getElementById('dlg-dest').textContent = dest ? '→ ' + dest : '';
+      const list = document.getElementById('dlg-tracks');
+      list.innerHTML = t.basicSongs.map((s, i) => `<li>
+        <span class="num">${i + 1}</span>
+        <button class="play" data-i="${i}" aria-label="Preview ${esc(s.title)}" ${s.previewUrl ? '' : 'disabled'}>▶</button>
+        <img class="art" loading="lazy" width="46" height="46" src="${esc(art(s, 100))}" alt="">
+        <div class="tk"><div class="t">${esc(s.title)}</div><div class="a">${esc(s.artistName)}</div></div>
+        ${s.id ? `<a class="am" target="_blank" rel="noopener" href="https://music.apple.com/us/song/${encodeURIComponent(s.id)}">Apple Music ↗</a>` : ''}
+      </li>`).join('');
+      list.querySelectorAll('.play').forEach(btn => btn.onclick = () => {
+        if (playingBtn === btn) { stop(); return; }
+        stop(); audio.src = t.basicSongs[+btn.dataset.i].previewUrl; audio.play().catch(() => {});
+        gc('bsides-wall-play');
+        playingBtn = btn; btn.classList.add('playing'); btn.textContent = '❚❚';
+      });
+      document.getElementById('dlg-store').onclick = () => gc('bsides-wall-dub');
+      dlg.showModal();
+      dlg.scrollTop = 0;
+      gc('bsides-wall-open');
+    }
+    dlg.addEventListener('close', stop);
+    document.getElementById('dlg-close').onclick = () => dlg.close();
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+    fetch(FEED_URL)
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(data => { TAPES = Array.isArray(data.tapes) ? data.tapes : []; render(); })
+      .catch(() => {
+        gallery.setAttribute('aria-busy', 'false');
+        gallery.innerHTML = '<div class="state" style="grid-column:1/-1">Couldn’t reach the wall just now. It’s always on Side B in the app.</div>';
+      });
+  </script>
+  <!-- GoatCounter — privacy-friendly analytics: pageviews + bsides-wall-* events. -->
+  <script data-goatcounter="https://triptunes.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
