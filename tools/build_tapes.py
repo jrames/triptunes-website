@@ -22,6 +22,7 @@ APP_STORE = "https://apps.apple.com/app/id6467522749"
 INDEXABLE_PATHS = [
     "/",
     "/b-sides/",
+    "/b-sides/wall/",
     "/press-kit/",
     "/privacy/",
     "/suggest-a-trip/",
